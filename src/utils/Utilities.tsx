@@ -15,11 +15,14 @@ import {
   VOUCHER_LIST
 } from 'configs/StatusConfig';
 import {IProductSale} from 'models/Product.Model';
+import {IProductPhuTung} from 'models/PhuTung.Model';
 
 const {width, height} = Dimensions.get('screen');
 let rootLoadingContext: any = null;
 
-const imageDefault = require('../assets/images/imgDefault.jpg');
+const imageDefault = {
+  uri: 'https://i.pinimg.com/564x/66/2c/6d/662c6d3495af017f5f7c138f14e4efb6.jpg'
+};
 
 export default class Utilities {
   static showToast(
@@ -537,6 +540,20 @@ export const getTongTienHang = (arrProductSale?: IProductSale[]): number => {
       ) {
         price = item.product.price;
       }
+
+      tongGia = tongGia + price * item.totalQty;
+    }
+  }
+
+  return tongGia;
+};
+export const getTongTienHangPSC = (arrProductSale?: IProductPhuTung[]): number => {
+  let tongGia = 0;
+
+  if (arrProductSale) {
+    for (let index = 0; index < arrProductSale.length; index++) {
+      const item = arrProductSale[index];
+      let price = item.phuTung?.price || 0;
 
       tongGia = tongGia + price * item.totalQty;
     }

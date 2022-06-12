@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FlatList, RefreshControl} from 'react-native';
+import {FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import {MyView, MyLoading, MyText, MyIcon, MyButton} from 'bases/components';
 
@@ -32,13 +32,6 @@ type IProps = IAppNavigateProps<'ManagerBranch'> &
   };
 
 class ManagerBranch extends React.Component<IProps, any> {
-  componentDidMount() {
-    const {isFirstLoading} = this.props;
-    if (isFirstLoading) {
-      this.props.GetManagerBranch();
-    }
-  }
-
   renderItem = ({item}: {item: IStoreModel}) => {
     const {objBranch} = this.props;
     return (
@@ -64,14 +57,14 @@ class ManagerBranch extends React.Component<IProps, any> {
   };
 
   renderListEmptyComponent = () => {
-    const {isFirstLoading} = this.props;
-    if (isFirstLoading) {
-      return (
-        <MyView style={managerBranchStyles.emptyCustomer}>
-          <MyLoading />
-        </MyView>
-      );
-    }
+    // const {isFirstLoading} = this.props;
+    // if (isFirstLoading) {
+    //   return (
+    //     <MyView style={managerBranchStyles.emptyCustomer}>
+    //       <MyLoading />
+    //     </MyView>
+    //   );
+    // }
     return (
       <MyView style={managerBranchStyles.emptyCustomer}>
         <MyText>Không có dữ liệu.</MyText>
@@ -112,7 +105,7 @@ class ManagerBranch extends React.Component<IProps, any> {
   };
 
   render() {
-    const {arrManagerBranch, isRefresh} = this.props;
+    const {arrManagerBranch} = this.props;
 
     return (
       <MyView style={managerBranchStyles.container}>
@@ -130,16 +123,16 @@ class ManagerBranch extends React.Component<IProps, any> {
         </MyView>
         <MyView style={managerBranchStyles.textSum}>
           <MyText myFontStyle={'Medium'} style={managerBranchStyles.myTextTop}>
-            {'Tổng số ' + Utilities.convertCount(this.props.count) + ' chi nhánh'}
+            {'Tổng số ' + Utilities.convertCount(arrManagerBranch?.length) + ' chi nhánh'}
           </MyText>
         </MyView>
         <ItemLineIndicatorCustom />
         <FlatList
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
-          refreshControl={
-            <RefreshControl refreshing={isRefresh || false} onRefresh={this.reload} />
-          }
+          // refreshControl={
+          //   <RefreshControl refreshing={isRefresh || false} onRefresh={this.reload} />
+          // }
           data={arrManagerBranch}
           extraData={arrManagerBranch}
           initialNumToRender={10}
@@ -147,9 +140,9 @@ class ManagerBranch extends React.Component<IProps, any> {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderItemSeparatorComponent}
           ListEmptyComponent={this.renderListEmptyComponent}
-          ListFooterComponent={this.renderListFooterComponent}
-          onEndReachedThreshold={0.1}
-          onEndReached={this.onEndReached}
+          // ListFooterComponent={this.renderListFooterComponent}
+          // onEndReachedThreshold={0.1}
+          // onEndReached={this.onEndReached}
           contentContainerStyle={managerBranchStyles.containerList}
         />
       </MyView>

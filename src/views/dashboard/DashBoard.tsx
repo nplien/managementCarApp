@@ -6,7 +6,7 @@ import ChonChiNhanh from './components/chonChiNhanh/ChonChiNhanh';
 import LocThoiGian from './components/locThoiGian/LocThoiGian';
 import {RefreshControl, ScrollView} from 'react-native';
 import StackBarView from './components/bieuDoCotChong/StackBarView';
-// import ViewTongDoanhThu from './components/viewTong/ViewTongDoanhThu';
+import ViewTongDoanhThu from './components/viewTong/ViewTongDoanhThu';
 import ListStoreCotChongReport from './components/bieuDoCotChong/ListStoreCotChongReport';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -98,7 +98,7 @@ class DashBoard extends Component<IProps> {
           }
           bouncesZoom={false}
           showsVerticalScrollIndicator={false}>
-          {/* <ViewTongDoanhThu /> */}
+          <ViewTongDoanhThu />
           <StackBarView />
           <ListStoreCotChongReport />
           <DatHangAndTonKho />

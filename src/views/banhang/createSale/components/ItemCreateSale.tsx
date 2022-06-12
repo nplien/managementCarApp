@@ -182,7 +182,6 @@ class ItemCreateSale extends React.Component<IProps, IState> {
     this.soLuong = textSoLuong;
 
     const {isCheck} = this.state;
-
     return (
       <MyButton
         onLongPress={this.onLongPress}

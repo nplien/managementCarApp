@@ -95,6 +95,9 @@ import ChangeGiaBanReducer from 'views/warehouse/chonHangHoa/Productcategory/com
 import ChooseBangGiaReducer from 'views/warehouse/chonHangHoa/Productcategory/components/chooseBangGia/redux';
 import ChooseKhachHangReducer from 'views/warehouse/chonHangHoa/Productcategory/components/chooseKhachHang/redux';
 import FilterCategoryReducer from 'views/warehouse/chonHangHoa/filterCategory/redux';
+import TiepNhanXeReducer from 'views/tiepNhanXe/redux/TiepNhanXe.Reducer';
+import PhieuSuaChuaReducer from 'views/phieuSuaChua/redux/PhieuSuaChua.Reducer';
+import CreatePSCReducer from 'views/createPSC/redux';
 
 const allReducer = combineReducers({
   // Các reducer của màn hình view dashboard
@@ -187,7 +190,10 @@ const allReducer = combineReducers({
   ChangeGiaBanReducer,
   ChooseBangGiaReducer,
   ChooseKhachHangReducer,
-  FilterCategoryReducer
+  FilterCategoryReducer,
+  TiepNhanXeReducer,
+  PhieuSuaChuaReducer,
+  CreatePSCReducer
 });
 
 export type RootState = ReturnType<typeof allReducer>;

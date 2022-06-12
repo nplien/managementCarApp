@@ -2,6 +2,7 @@ import {IManagerBranchState} from './ManagerBranch.Type';
 import {IAppAction} from 'views/app';
 import Utilities from 'utils/Utilities';
 import {CONFIG_DATE_FILTER} from 'configs/FilterConfig';
+import {StoersFake} from 'views/personals/redux/StoresFake';
 
 export const MANAGER_BRANCH_ACTION = {
   IS_REFRESH: 'MANAGER/BRANCH/LIST/IS/REFRESH',
@@ -102,7 +103,7 @@ const ManagerBranchReducer = (
     isFirstLoading: true,
     isRefresh: false,
     count: 0,
-    arrManagerBranch: [],
+    arrManagerBranch: StoersFake,
     isLoadMore: false,
     isStop: false,
     isError: false,

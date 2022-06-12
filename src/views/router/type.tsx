@@ -3,8 +3,10 @@ import {ICategoryModel} from 'models/Category.Model';
 import {CustomerModel} from 'models/Customer.Model';
 import {IStorePerson} from 'models/ModelBase';
 import {PaymentModel} from 'models/Order.Model';
+import {IProductPCS} from 'models/PhieuSuaChua.Model';
 import {IStaffModel} from 'models/Staff.Model';
 import {IStoreModel} from 'models/Store.Model';
+import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
 import {MOI_QUAN_TAM} from 'services/DashBoard.Api';
 import {IDateFilterType, IDateRange, IPropsButtonSheet, TIME_TYPE} from 'views/app';
 
@@ -108,6 +110,20 @@ export type RouterParamsList = {
   ReturnOrder: {isFromReport: boolean};
   DetailBCHangHoa: {view: number; sort_by: string};
   FilterDetailBCHH: {view: MOI_QUAN_TAM; sort_by: string};
+  PhieuSuaChua: undefined;
+  AddPhieuSuaChua: undefined;
+  AddTiepNhanXe: {
+    type: 'update' | 'nomal';
+    itemTNX?: ITiepNhanXeModel;
+  };
+  TiepNhanXe: {
+    type: 'PHIEU_SUA_XE';
+  };
+  CreatedPSC: undefined;
+  ThanhToanPSC: undefined;
+  DetailPSC: {
+    detailPSC: IProductPCS;
+  };
 };
 
 export type RouterModalParamsList = {
@@ -160,22 +176,7 @@ export type RouterModalParamsList = {
     idCheckNhomHang: number;
   };
   ModalListPrice: undefined;
+  TypeCarModal: undefined;
 };
 
 export type RootParamsList = RouterParamsList & RouterModalParamsList;
-
-export type SCREEN =
-  | 'ProductBanHang'
-  | 'Invoice'
-  | 'Order'
-  | 'ReturnOrder'
-  | 'Customer'
-  | 'Suppliers'
-  | 'DeliveryOrder'
-  | 'Inventory'
-  | 'ExportOrder'
-  | 'ImportOrder'
-  | 'ManagerBranch'
-  | 'VoucherList'
-  | 'QLNhanVien'
-  | 'PaymentHome';

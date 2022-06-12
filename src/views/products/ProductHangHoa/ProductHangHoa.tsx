@@ -25,7 +25,18 @@ import MyNavigator from 'utils/MyNavigator';
 import {CategoryStyle} from './styles/ProductHangHoa.Style';
 import {IChooseStoreState} from 'views/menuLeft/redux';
 import CountHangHoa from './components/CountHangHoa';
-
+const arrrTextTest = [
+  {name: ' LG01 Lọc gió điều hòa ', price: 120000, id: 24182},
+  {name: 'LG02 Lọc gió động cơ ', price: 350000, id: 24181},
+  {name: 'CG01 Cần gạt mưa  ', price: 679000, id: 24154},
+  {name: 'CG01 Cần gạt mưa  ', price: 560000, id: 24140},
+  {name: ' BAQ Bình ắc quy ', price: 2000000, id: 23078},
+  {name: 'BDP Bảo dưỡng phanh  ', price: 200000, id: 22466},
+  {name: '. VS01 Vệ sinh Bu zi  ', price: 200000, id: 22465},
+  {name: 'LX01 Lốp xe', price: 560000, id: 22464},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 22463},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 22449}
+];
 interface IProps extends IProductHangHoaState, IChooseStoreState {
   GetProductHangHoa: typeof GetProductHangHoa;
   showRefreshHangHoa: typeof showRefreshHangHoa;
@@ -149,6 +160,13 @@ class ProductHangHoa extends Component<IProps> {
 
   render() {
     const {arrProduct, isRefresh} = this.props;
+    arrProduct?.forEach((item, index) => {
+      const element = arrrTextTest.findIndex(value => value.id === item.id);
+      if (element > 1) {
+        arrProduct[index].name = arrrTextTest[element].name;
+        arrProduct[index].price = arrrTextTest[element].price;
+      }
+    });
 
     return (
       <MyView style={CategoryStyle.container}>
@@ -169,9 +187,9 @@ class ProductHangHoa extends Component<IProps> {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderItemSeparatorComponent}
           ListEmptyComponent={this.renderListEmptyComponent}
-          ListFooterComponent={this.renderListFooterComponent}
+          // ListFooterComponent={this.renderListFooterComponent}
           onEndReachedThreshold={0.1}
-          onEndReached={this.onEndReached}
+          // onEndReached={this.onEndReached}
         />
         {/* {this.renderFooter()} */}
       </MyView>

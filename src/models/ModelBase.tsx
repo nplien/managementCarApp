@@ -23,7 +23,7 @@ export interface Ward {
 }
 
 export interface ICreatedBy {
-  id?: number;
+  id?: number | string;
   name?: string;
 }
 

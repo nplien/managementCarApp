@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
-import store from 'views/app';
+import {persistor, store} from 'views/app';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import FlashMessage from 'react-native-flash-message';
 import RootLoading from 'bases/components/loading/RootLoading';
@@ -11,6 +11,7 @@ import {enableScreens} from 'react-native-screens';
 enableScreens();
 // import {investigate} from 'react-native-bundle-splitter/dist/utils';
 import Utilities from 'utils/Utilities';
+import {PersistGate} from 'redux-persist/integration/react';
 
 // Utilities.log(investigate());
 export default class App extends Component {
@@ -23,15 +24,17 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <SafeAreaView style={styles.container} edges={['left', 'right']}>
-          <StatusBar
-            backgroundColor={COLOR.BG.BLACK}
-            barStyle={Utilities.isAndroid() ? 'light-content' : 'dark-content'}
-          />
-          <Router />
-          <FlashMessage position="top" />
-          <RootLoading />
-        </SafeAreaView>
+        <PersistGate loading={null} persistor={persistor}>
+          <SafeAreaView style={styles.container} edges={['left', 'right']}>
+            <StatusBar
+              backgroundColor={COLOR.BG.BLACK}
+              barStyle={Utilities.isAndroid() ? 'light-content' : 'dark-content'}
+            />
+            <Router />
+            <FlashMessage position="top" />
+            <RootLoading />
+          </SafeAreaView>
+        </PersistGate>
       </Provider>
     );
   }

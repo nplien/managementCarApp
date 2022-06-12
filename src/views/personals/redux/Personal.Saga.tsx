@@ -14,7 +14,7 @@ function* getInfoPersonalSaga() {
       yield put({
         type: PERSONAL_ACTION.GET_SUCCESS,
         payload: {
-          info: response.data
+          info: {...response.data, stores: response.data.stores?.find(test => test.id === 22)}
         }
       });
     } else {

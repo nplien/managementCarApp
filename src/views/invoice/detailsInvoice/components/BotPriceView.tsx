@@ -47,7 +47,7 @@ export default class BotPriceView extends PureComponent<IBotPriceProps> {
               style={[detailStyles.priceRight, {color: color || COLOR.TEXT.BLACK}]}
             />
           )}
-          {userPayment && userPayment > 0 ? (
+          {userPayment === 0 ? (
             <MyIcon
               iconFontType="SimpleLineIcons"
               name={'arrow-right'}

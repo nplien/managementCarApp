@@ -12,6 +12,14 @@ import Toolbar from './Toolbar';
 import MyCheckAppModal from 'views/app/components/customs/checkApp/MyCheckAppModal';
 import MyDatePickerModal from 'bases/components/picker/MyDatePickerModal';
 import tw from 'utils/tailwind';
+import PhieuSuaChua from 'views/phieuSuaChua/PhieuSuaChua';
+import AddPhieuSuaChua from 'views/phieuSuaChua/addPhieuSuaChua/AddPhieuSuaChua';
+import TiepNhanXe from 'views/tiepNhanXe/TiepNhanXe';
+import AddTiepNhanXe from 'views/tiepNhanXe/addTiepNhanXe/AddTiepNhanXe';
+import TypeCarModal from 'views/tiepNhanXe/addTiepNhanXe/components/TypeCarModal';
+import CreatedPSC from 'views/createPSC/CreatedPSC';
+import ThanhToanPSC from 'views/createPSC/ThanhToanPSC';
+import DetailPSC from 'views/phieuSuaChua/detialPSC/DetailPSC';
 
 const Login = register({loader: () => import('views/account/Login')});
 const PersonalView = register({
@@ -268,7 +276,6 @@ class Router extends PureComponent {
             {/* 2 màn hình ban đầu */}
             <RootStack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
             <RootStack.Screen name="Login" component={Login} options={{headerShown: false}} />
-
             {/* các màn hình nằm header của Menu left */}
             {/* màn hình hiển thị thông tin cá nhân */}
             <RootStack.Screen
@@ -276,14 +283,12 @@ class Router extends PureComponent {
               component={PersonalView}
               options={{title: 'Thông tin cá nhân'}}
             />
-
             {/* màn hình chọn khoảng thời gian */}
             <RootStack.Screen
               name="SelectDateRange"
               component={SelectDateRange}
               options={{title: 'Tùy chọn ngày'}}
             />
-
             <RootStack.Screen
               name="Home"
               options={{
@@ -339,7 +344,6 @@ class Router extends PureComponent {
               }}
               component={BCBanHang}
             />
-
             <RootStack.Screen name="DetailBCBanHang" component={DetailBCBanHang} />
             <RootStack.Screen name="DetailBCNVBanHang" component={DetailBCNVBanHang} />
             <RootStack.Screen name="ItemTable" component={ItemTable} />
@@ -360,7 +364,6 @@ class Router extends PureComponent {
               }}
               component={BaoCaoCuoiNgay}
             />
-
             <RootStack.Screen
               name="LocBCCuoiNgay"
               options={{
@@ -368,7 +371,6 @@ class Router extends PureComponent {
               }}
               component={LocBCCuoiNgay}
             />
-
             {/* các màn hình trong RootStack, đi ra từ các màn hình trong Menu left */}
             {/* các màn hình đi ra từ màn Customers */}
             <RootStack.Screen
@@ -380,7 +382,6 @@ class Router extends PureComponent {
                 navigation: {navigation}
               })}
             />
-
             <RootStack.Screen
               name="FilterCustomer"
               component={FilterCustomer}
@@ -399,7 +400,6 @@ class Router extends PureComponent {
               component={CreateGroupCustomer}
               options={{title: 'Thêm mới nhóm khách hàng'}}
             />
-
             {/* các màn hình đi ra từ màn Suppliers */}
             <RootStack.Screen
               name="SuppliersDetail"
@@ -411,14 +411,12 @@ class Router extends PureComponent {
               component={FilterSupplier}
               options={{title: 'Tìm kiếm và lọc'}}
             />
-
             <RootStack.Screen name="AddSuppliers" component={AddSuppliers} />
             <RootStack.Screen
               name="CreateGroupSupplier"
               component={CreateGroupSupplier}
               options={{title: 'Thêm nhóm nhà cung cấp'}}
             />
-
             {/* các màn hình đi ra từ màn ProductCategorys */}
             <RootStack.Screen
               name="Categorys"
@@ -470,21 +468,18 @@ class Router extends PureComponent {
               component={FormPayment}
               options={{title: 'Phương thức thanh toán'}}
             />
-
             {/* các màn hình đi ra từ màn Bán Hàng */}
             <RootStack.Screen
               name="FilterBanHang"
               component={FilterBanHang}
               options={{title: 'Tìm hàng hóa'}}
             />
-
             {/* các màn hình đi ra từ màn Hàng hoá */}
             <RootStack.Screen
               name="FilterHangHoa"
               component={FilterHangHoa}
               options={{title: 'Tìm hàng hóa'}}
             />
-
             {/* các màn hình đi ra từ màn Inventory */}
             <RootStack.Screen
               name="InventoryFilter"
@@ -496,20 +491,17 @@ class Router extends PureComponent {
               component={InventoryDetail}
               options={{title: 'Chi tiết phiếu kiểm'}}
             />
-
             {/* các màn hình đi ra từ màn Order */}
             <RootStack.Screen
               name="DetailsOrder"
               component={DetailsOrder}
               options={{title: 'Chi tiết đơn đặt hàng'}}
             />
-
             <RootStack.Screen
               name="FilterOrder"
               component={FilterOrder}
               options={{title: 'Tìm kiếm và lọc'}}
             />
-
             {/* các màn hình đi ra từ màn Invoice */}
             <RootStack.Screen
               name="DetailsInvoice"
@@ -521,7 +513,6 @@ class Router extends PureComponent {
               component={FilterInvoice}
               options={{title: 'Tìm kiếm và lọc'}}
             />
-
             {/* các màn hình đi ra từ màn DeliveryOrder */}
             <RootStack.Screen
               name="DetailsDelivery"
@@ -533,7 +524,6 @@ class Router extends PureComponent {
               options={{title: 'Tìm kiếm và lọc'}}
               component={FilterDelivery}
             />
-
             {/* các màn hình đi ra từ màn ImportOrder */}
             <RootStack.Screen
               name="ImportCreateView"
@@ -580,7 +570,6 @@ class Router extends PureComponent {
               component={PaymentImport}
               options={{headerTitle: 'Thanh toán'}}
             />
-
             {/* các màn hình đi ra từ màn ExportOrder */}
             <RootStack.Screen
               name="DetailsOrderExport"
@@ -651,14 +640,12 @@ class Router extends PureComponent {
               component={FilterVoucherList}
               options={{title: 'Tìm kiếm'}}
             />
-
             {/* các màn hình đi ra từ màn QLNhanVien */}
             <RootStack.Screen
               name="NhanvienDetail"
               component={NhanvienDetail}
               options={{title: 'Thông tin nhân viên'}}
             />
-
             {/* các màn hình đi ra từ màn ManagerBranch */}
             <RootStack.Screen
               name="BranchDetail"
@@ -674,9 +661,7 @@ class Router extends PureComponent {
               component={FilterBrand}
               options={{title: 'Tìm Kiếm'}}
             />
-
             {/* các màn hình đi ra từ màn PaymentHome */}
-
             <RootStack.Screen
               name="PaymentDetails"
               component={PaymentDetails}
@@ -692,7 +677,6 @@ class Router extends PureComponent {
               options={{title: 'Tìm kiếm và lọc'}}
               component={FilterSoQuy}
             />
-
             <RootStack.Screen name="Order" component={Order} options={{headerTitle: 'Đặt hàng'}} />
             <RootStack.Screen name="Customer" component={Customer} />
             <RootStack.Screen
@@ -733,7 +717,6 @@ class Router extends PureComponent {
           )
         }}
       /> */}
-
             <RootStack.Screen
               name="Inventory"
               component={Inventory}
@@ -834,7 +817,6 @@ class Router extends PureComponent {
               component={SoQuy}
               options={{headerTitle: 'Sổ quỹ'}}
             />
-
             <RootStack.Screen
               name="DetailsTraHang"
               component={DetailsTraHang}
@@ -865,6 +847,33 @@ class Router extends PureComponent {
               component={Invoice}
               options={{headerTitle: 'Hóa đơn'}}
             />
+            <RootStack.Screen name="PhieuSuaChua" component={PhieuSuaChua} />
+            <RootStack.Screen
+              name="AddPhieuSuaChua"
+              component={AddPhieuSuaChua}
+              options={{headerTitle: 'Thêm phiếu sửa chữa'}}
+            />
+            <RootStack.Screen name="TiepNhanXe" component={TiepNhanXe} />
+            <RootStack.Screen
+              name="AddTiepNhanXe"
+              component={AddTiepNhanXe}
+              options={{headerTitle: 'Tiếp nhận xe'}}
+            />
+            <RootStack.Screen
+              name="CreatedPSC"
+              options={{title: 'Tạo Phiếu sửa chữa', gestureEnabled: false}}
+              component={CreatedPSC}
+            />
+            <RootStack.Screen
+              name="ThanhToanPSC"
+              options={{title: 'Thanh Toán Phiếu sửa chữa', gestureEnabled: false}}
+              component={ThanhToanPSC}
+            />
+            <RootStack.Screen
+              name="DetailPSC"
+              options={{title: 'Chi tiết Phiếu sửa chữa', gestureEnabled: false}}
+              component={DetailPSC}
+            />
           </RootStack.Group>
           <RootStack.Group
             screenOptions={{
@@ -887,6 +896,7 @@ class Router extends PureComponent {
             <RootStack.Screen name="ModalKenhBan" component={ModalKenhBan} />
             <RootStack.Screen name="ModalNhomHang" component={ModalNhomHang} />
             <RootStack.Screen name="ModalListPrice" component={ListPriceModal} />
+            <RootStack.Screen name="TypeCarModal" component={TypeCarModal} />
           </RootStack.Group>
         </RootStack.Navigator>
       </NavigationContainer>

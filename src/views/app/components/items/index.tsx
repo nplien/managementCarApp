@@ -15,3 +15,4 @@ export * from './ItemProductOfOrder';
 export * from './ItemLineIndicator';
 export * from './ItemOrderIE';
 export * from './ItemProductOption';
+export * from './ItemProductOfPSC';

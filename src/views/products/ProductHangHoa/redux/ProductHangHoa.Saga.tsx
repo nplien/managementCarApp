@@ -14,12 +14,12 @@ function* getListProductHangHoa() {
 
     const rootState: RootState = yield select();
 
-    const skip = rootState.ProductHangHoaReducer.arrProduct?.length;
-    const isRefresh = rootState.ProductHangHoaReducer.isRefresh;
-    let skipTmp = skip;
-    if (isRefresh) {
-      skipTmp = 0;
-    }
+    // const skip = rootState.ProductHangHoaReducer.arrProduct?.length;
+    // const isRefresh = rootState.ProductHangHoaReducer.isRefresh;
+    // let skipTmp = skip;
+    // if (isRefresh) {
+    //   skipTmp = 0;
+    // }
 
     const sortFilter = rootState.ProductHangHoaReducer.sortFilter;
     const giaHienThi = rootState.ProductHangHoaReducer.giaHienThi;
@@ -35,7 +35,7 @@ function* getListProductHangHoa() {
     }
 
     let param: any = {
-      skip: skipTmp,
+      skip: 0,
       limit: limit,
       sort_by: sortBy,
       order_by: orderBy

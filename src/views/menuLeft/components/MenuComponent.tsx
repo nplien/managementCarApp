@@ -35,6 +35,18 @@ class MenuComponent extends PureComponent<IProps> {
       icon: 'cart-outline'
     },
     {
+      screen: 'PhieuSuaChua',
+      name: 'Phiếu sửa chữa',
+      font: 'MaterialCommunityIcons',
+      icon: 'cart-outline'
+    },
+    {
+      screen: 'TiepNhanXe',
+      name: 'Tiếp nhận xe',
+      font: 'MaterialCommunityIcons',
+      icon: 'clipboard-list-outline'
+    },
+    {
       screen: 'Invoice',
       name: 'Lịch sử hoá đơn',
       font: 'MaterialCommunityIcons',
@@ -200,7 +212,7 @@ class MenuComponent extends PureComponent<IProps> {
           })}
         </MyView>
 
-        <MyButton
+        {/* <MyButton
           style={MenuContentStyle.buttomLogout}
           onPress={() => {
             this.checkUpdateApp();
@@ -216,7 +228,7 @@ class MenuComponent extends PureComponent<IProps> {
           <MyView style={MenuContentStyle.viewCapNhap} transparent>
             <MyText>Cập nhật ứng dụng</MyText>
           </MyView>
-        </MyButton>
+        </MyButton> */}
         <MyButton
           style={MenuContentStyle.buttomLogout}
           onPress={() => {

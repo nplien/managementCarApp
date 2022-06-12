@@ -14,12 +14,12 @@ function* getListProductBanHang() {
 
     const rootState: RootState = yield select();
 
-    const skip = rootState.ProductBanHangReducer.arrProduct?.length;
-    const isRefresh = rootState.ProductBanHangReducer.isRefresh;
-    let skipTmp = skip;
-    if (isRefresh) {
-      skipTmp = 0;
-    }
+    // const skip = rootState.ProductBanHangReducer.arrProduct?.length;
+    // const isRefresh = rootState.ProductBanHangReducer.isRefresh;
+    // let skipTmp = skip;
+    // if (isRefresh) {
+    //   skipTmp = 0;
+    // }
 
     const sortFilter = rootState.ProductBanHangReducer.sortFilter;
     const giaHienThi = rootState.ProductBanHangReducer.giaHienThi;
@@ -35,8 +35,8 @@ function* getListProductBanHang() {
     }
 
     let param: any = {
-      skip: skipTmp,
-      limit: limit,
+      skip: 0,
+      limit: 10,
       sort_by: sortBy,
       order_by: orderBy
     };

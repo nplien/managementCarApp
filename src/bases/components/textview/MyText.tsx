@@ -60,7 +60,7 @@ export const MyText = (props: IPropsMyText) => {
   }
 
   return (
-    <Text {...props} style={[styles.text, props.style, textStyle]} allowFontScaling={false}>
+    <Text {...props} style={[styles.text, textStyle, props.style]} allowFontScaling={false}>
       {children}
     </Text>
   );

@@ -30,16 +30,13 @@ interface IDetailState {
 /**
  *  Chi tiết một đợn hàng
  */
-export default class DetailsInvoice extends React.PureComponent<
-  IDetailProps,
-  IDetailState
-> {
+export default class DetailsInvoice extends React.PureComponent<IDetailProps, IDetailState> {
   constructor(props: any) {
     super(props);
     this.state = {
       detail: {},
       isLoading: true,
-      isError: false,
+      isError: false
     };
   }
 
@@ -52,18 +49,13 @@ export default class DetailsInvoice extends React.PureComponent<
         this.setState({
           detail: result.data ? result.data : {},
           isLoading: false,
-          isError: false,
+          isError: false
         });
       } else {
-        Utilities.showToast(
-          'Chi tiết đơn/phiếu',
-          result.message,
-          'danger',
-          4123,
-        );
+        Utilities.showToast('Chi tiết đơn/phiếu', result.message, 'danger', 4123);
         this.setState({
           isLoading: false,
-          isError: true,
+          isError: true
         });
       }
     }
@@ -93,14 +85,8 @@ export default class DetailsInvoice extends React.PureComponent<
         </MyText>
         <MyButton disabled={isDisabled} style={detailStyles.rowTopview}>
           <MyView transparent style={detailStyles.infoProdCenter}>
-            <MyButton
-              transparent
-              onPress={this.handleDetailUser}
-              style={detailStyles.viewName}>
-              <MyText
-                myFontStyle="Medium"
-                numberOfLines={2}
-                style={detailStyles.textNameLeft}>
+            <MyButton transparent onPress={this.handleDetailUser} style={detailStyles.viewName}>
+              <MyText myFontStyle="Medium" numberOfLines={2} style={detailStyles.textNameLeft}>
                 {detail.customer?.name}
               </MyText>
               {isDisabled ? null : (
@@ -113,16 +99,11 @@ export default class DetailsInvoice extends React.PureComponent<
                 />
               )}
             </MyButton>
-            <MyText
-              myFontStyle={'Medium'}
-              numberOfLines={2}
-              style={detailStyles.textRight}>
+            <MyText myFontStyle={'Medium'} numberOfLines={2} style={detailStyles.textRight}>
               {detail.created_by?.name}
             </MyText>
           </MyView>
-          <MyView
-            transparent
-            style={[detailStyles.infoProdCenter, {marginTop: MY_SIZE.s_8}]}>
+          <MyView transparent style={[detailStyles.infoProdCenter, {marginTop: MY_SIZE.s_8}]}>
             <MyView transparent style={detailStyles.textNameView}>
               <Ionicons
                 name={'pricetag'}
@@ -134,10 +115,7 @@ export default class DetailsInvoice extends React.PureComponent<
                 {detail.price_book?.name}
               </MyText>
             </MyView>
-            <MyText
-              myFontStyle={'Regular'}
-              numberOfLines={1}
-              style={detailStyles.textRight}>
+            <MyText myFontStyle={'Regular'} numberOfLines={1} style={detailStyles.textRight}>
               {Utilities.convertTimeByFormat(timeCreate, 'DD/MM/YYYY-HH:mm')}
             </MyText>
           </MyView>
@@ -153,10 +131,7 @@ export default class DetailsInvoice extends React.PureComponent<
                 {detail.channel?.name}
               </MyText>
             </MyView>
-            <MyText
-              myFontStyle={'Regular'}
-              numberOfLines={1}
-              style={detailStyles.textRight}>
+            <MyText myFontStyle={'Regular'} numberOfLines={1} style={detailStyles.textRight}>
               {detail.store?.name}
             </MyText>
           </MyView>
@@ -252,11 +227,11 @@ export default class DetailsInvoice extends React.PureComponent<
             onRefresh={() => {
               this.setState(
                 {
-                  isLoading: true,
+                  isLoading: true
                 },
                 () => {
                   this.componentDidMount();
-                },
+                }
               );
             }}
             data={detail.products}

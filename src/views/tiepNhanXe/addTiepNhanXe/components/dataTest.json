@@ -1,0 +1,1293 @@
+ [{
+         "id": "car_mercedesbenz",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 1,
+         "group": 2,
+         "isActive": true,
+         "name": "Mercedes Benz",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_mercedes.png"
+     },
+     {
+         "id": "car_bmw",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 2,
+         "group": 2,
+         "isActive": true,
+         "name": "BMW",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_bmw.png"
+     },
+     {
+         "id": "car_volvo",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 3,
+         "group": 2,
+         "isActive": true,
+         "name": "Volvo",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_volvo.png"
+     },
+     {
+         "id": "car_toyota",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 4,
+         "group": 2,
+         "isActive": true,
+         "name": "Toyota",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_toyota.png"
+     },
+     {
+         "id": "car_honda",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 5,
+         "group": 2,
+         "isActive": true,
+         "name": "Honda",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_honda.png"
+     },
+     {
+         "id": "car_audi",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 6,
+         "group": 2,
+         "isActive": true,
+         "name": "Audi",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_audi.png"
+     },
+     {
+         "id": "car_kia",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 7,
+         "group": 2,
+         "isActive": true,
+         "name": "Kia",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_kia.png"
+     },
+     {
+         "id": "car_mazda",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 8,
+         "group": 2,
+         "isActive": true,
+         "name": "Mazda",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_mazda.png"
+     },
+     {
+         "id": "car_ford",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 9,
+         "group": 2,
+         "isActive": true,
+         "name": "Ford",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_ford.png"
+     },
+     {
+         "id": "car_mitsubishi",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 10,
+         "group": 2,
+         "isActive": true,
+         "name": "Mitsubishi",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_mitsubishi.png"
+     },
+     {
+         "id": "car_lexus",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 11,
+         "group": 2,
+         "isActive": true,
+         "name": "Lexus",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_lexus.png"
+     },
+     {
+         "id": "car_hyundai",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 12,
+         "group": 2,
+         "isActive": true,
+         "name": "Hyundai",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_hyundai.png"
+     },
+     {
+         "id": "car_suzuki",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 13,
+         "group": 2,
+         "isActive": true,
+         "name": "Suzuki",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_suzuki.png"
+     },
+     {
+         "id": "car_nissan",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 14,
+         "group": 2,
+         "isActive": true,
+         "name": "Nissan",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_nissan.png"
+     },
+     {
+         "id": "car_volkswagen",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 15,
+         "group": 2,
+         "isActive": true,
+         "name": "Volkswagen",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_volkswagen.png"
+     },
+     {
+         "id": "car_landrover",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 16,
+         "group": 2,
+         "isActive": true,
+         "name": "LandRover",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_landrover.png"
+     },
+     {
+         "id": "car_chevrolet",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 16,
+         "group": 2,
+         "isActive": true,
+         "name": "Chevrolet",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_chevrolet.png"
+     },
+     {
+         "id": "car_renault",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 17,
+         "group": 2,
+         "isActive": true,
+         "name": "Renault",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_renault.png"
+     },
+     {
+         "id": "car_ferrari",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 19,
+         "group": 2,
+         "isActive": true,
+         "name": "Ferrari",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_ferrari.png"
+     },
+     {
+         "id": "car_porsche",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 20,
+         "group": 2,
+         "isActive": true,
+         "name": "Porsche",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_porsche.png"
+     },
+     {
+         "id": "car_rollsroyce",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 21,
+         "group": 2,
+         "isActive": true,
+         "name": "Rolls Royce",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_rollsroyce.png"
+     },
+     {
+         "id": "car_lamborghini",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 22,
+         "group": 2,
+         "isActive": true,
+         "name": "Lamborghini",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_lamborghini.png"
+     },
+     {
+         "id": "car_cadillac",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 23,
+         "group": 2,
+         "isActive": true,
+         "name": "Cadillac",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_cadillac.png"
+     },
+     {
+         "id": "car_jaguar",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 24,
+         "group": 2,
+         "isActive": true,
+         "name": "Jaguar",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_jaguar.png"
+     },
+     {
+         "id": "car_peugeot",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 25,
+         "group": 2,
+         "isActive": true,
+         "name": "Peugeot",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_peugeot.png"
+     },
+     {
+         "id": "car_chrysler",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Chrysler",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_chrysler.png"
+     },
+     {
+         "id": "car_byd",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "BYD",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_byd.png"
+     },
+     {
+         "id": "car_subaru",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Subaru",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_subaru.png"
+     },
+     {
+         "id": "car_luxgen",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Luxgen",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_luxgen.png"
+     },
+     {
+         "id": "car_ssangyong",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Ssangyong",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_ssangyong.png"
+     },
+     {
+         "id": "car_sym",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "SYM",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_sym.png"
+     },
+     {
+         "id": "car_acura",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Acura",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_acura.png"
+     },
+     {
+         "id": "car_fiat",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Fiat",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_fiat.png"
+     },
+     {
+         "id": "car_infiniti",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Infiniti",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_infiniti.png"
+     },
+     {
+         "id": "car_haima",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Haima",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_haima.png"
+     },
+     {
+         "id": "car_smart",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Smart",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_smart.png"
+     },
+     {
+         "id": "car_zotye",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Zotye",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_zotye.png"
+     },
+     {
+         "id": "car_maybach",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Maybach",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_maybach.png"
+     },
+     {
+         "id": "car_maserati",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Maserati",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_maserati.png"
+     },
+     {
+         "id": "car_gaz",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Gaz",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_lada",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Lada",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_geely",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Geely",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_geely.png"
+     },
+     {
+         "id": "car_samsung",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Samsung",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_samsung.png"
+     },
+     {
+         "id": "car_chery",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Chery",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_chery.png"
+     },
+     {
+         "id": "car_changan",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Changan",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_changan.png"
+     },
+     {
+         "id": "car_jeep",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Jeep",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_jeep.png"
+     },
+     {
+         "id": "car_thaco",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Thaco",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_thaco.png"
+     },
+     {
+         "id": "car_baic",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Baic",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_buick",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Buick",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_buick.png"
+     },
+     {
+         "id": "car_mercury",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Mercury",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_mercury.png"
+     },
+     {
+         "id": "car_opel",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Opel",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_opel.png"
+     },
+     {
+         "id": "car_hummer",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Hummer",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_lincoln",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Lincoln",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_lincoln.png"
+     },
+     {
+         "id": "car_pontiac",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Pontiac",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_pontiac.png"
+     },
+     {
+         "id": "car_hino",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Hino",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_dodge",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Dodge",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_mini",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Mini",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_rover",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Rover",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_lifan",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Lifan",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_lifan.png"
+     },
+     {
+         "id": "car_uaz",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "UAZ",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_astonmartin",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Aston Martin",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_aston_martin.png"
+     },
+     {
+         "id": "car_tesla",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Tesla",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_tesla.png"
+     },
+     {
+         "id": "car_gmc",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "GMC",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_citroen",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Citroen",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_mekong",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Mekong",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_mg",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "MG",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_scion",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Scion",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_scion.png"
+     },
+     {
+         "id": "car_alfaromeo",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Alfa Romeo",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_bentley",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Bentley",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_bentley.png"
+     },
+     {
+         "id": "car_isuzu",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Isuzu",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_isuzu.png"
+     },
+     {
+         "id": "car_proton",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Proton",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_daewoo",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Daewoo",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_daewoo.png"
+     },
+     {
+         "id": "car_vinaxuki",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Vinaxuki",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_jrd",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "JRD",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_asia",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Asia",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/defaults/avatar.jpg"
+     },
+     {
+         "id": "car_daihatsu",
+         "parent": {
+             "id": "car",
+             "name": "Ô tô"
+         },
+         "note": null,
+         "position": 99,
+         "group": 2,
+         "isActive": true,
+         "name": "Daihatsu",
+         "createdBy": {
+             "id": "1000",
+             "name": "Thành Phạm"
+         },
+         "logo": "https://cdn.csell.vn/categories/car/ic_car_daihatsu.png"
+     }
+ ]

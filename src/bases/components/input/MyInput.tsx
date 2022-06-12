@@ -6,6 +6,7 @@ import {MyView} from 'bases/components/view/MyView';
 import {COLOR, MY_SIZE, setMargin, setPadding, setRadius, TYPE_OF_FONT} from 'bases/styles/Core';
 import {TextInputMask, TextInputMaskProps} from 'react-native-masked-text';
 import {PRICE_MASK} from 'common/Constants';
+import tw from 'utils/tailwind';
 
 interface IProps extends TextInputProps {
   label?: any | null;
@@ -56,7 +57,12 @@ export class MyInput extends PureComponent<IProps> {
           autoCorrect={false}
           allowFontScaling={false}
           ref={inputRef}
-          style={[styles.input, this.props.style, textStyle]}
+          style={[
+            tw.style(
+              'px-2 android:py-1 ios:py-2 text-[14px] rounded border border-stone-300 text-black'
+            ),
+            this.props.style
+          ]}
         />
       </MyView>
     );

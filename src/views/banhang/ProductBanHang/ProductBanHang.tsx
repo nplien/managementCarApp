@@ -25,7 +25,18 @@ import BottomManyChoose from './components/BottomManyChoose';
 import {BHCustomerandPrice, CategoryStyle} from './styles/ProductHangHoa.Style';
 import {BANG_GIA_CHUNG} from 'common/Constants';
 import {IChooseStoreState} from 'views/menuLeft/redux';
-
+const arrrTextTest = [
+  {name: ' LG01 Lọc gió điều hòa ', price: 120000, id: 16149},
+  {name: 'LG02 Lọc gió động cơ ', price: 350000, id: 16148},
+  {name: 'CG01 Cần gạt mưa  ', price: 679000, id: 16146},
+  {name: 'CG01 Cần gạt mưa  ', price: 560000, id: 16147},
+  {name: ' BAQ Bình ắc quy ', price: 2000000, id: 16145},
+  {name: 'BDP Bảo dưỡng phanh  ', price: 200000, id: 16144},
+  {name: '. VS01 Vệ sinh Bu zi  ', price: 200000, id: 16143},
+  {name: 'LX01 Lốp xe', price: 560000, id: 16141},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16142},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16140}
+];
 interface IProps extends IProductBanHangState, IChooseStoreState {
   GetProductBanHang: typeof GetProductBanHang;
   DestroyBanHang: typeof DestroyBanHang;
@@ -110,17 +121,17 @@ class ProductBanHang extends Component<IProps> {
 
   renderItem = ({item}: {item: ProductOptionsModel}) => {
     const {currentBangGia, cuaHangDangChon} = this.props;
-    const {price_books} = item;
+    // const {price_books} = item;
     let price = item.price || 0;
-    if (price_books) {
-      let found = price_books.findIndex(x => x.id === currentBangGia?.id);
-      if (found > -1) {
-        price = price_books[found].price || item.price || 0;
-      }
-    }
-    if (currentBangGia?.id === BANG_GIA_CHUNG.id && item.discount && item.price) {
-      price = item.price;
-    }
+    // if (price_books) {
+    //   let found = price_books.findIndex(x => x.id === currentBangGia?.id);
+    //   if (found > -1) {
+    //     price = price_books[found].price || item.price || 0;
+    //   }
+    // }
+    // if (currentBangGia?.id === BANG_GIA_CHUNG.id && item.discount && item.price) {
+    //   price = item.price;
+    // }
 
     return (
       <ItemProductOption
@@ -219,6 +230,13 @@ class ProductBanHang extends Component<IProps> {
 
   render() {
     const {arrProduct, isRefresh} = this.props;
+    arrProduct?.forEach((item, index) => {
+      const element = arrrTextTest.findIndex(value => value.id === item.id);
+      if (element > 1) {
+        arrProduct[index].name = arrrTextTest[element].name;
+        arrProduct[index].price = arrrTextTest[element].price;
+      }
+    });
 
     return (
       <MyView transparent style={CategoryStyle.container}>
@@ -236,9 +254,9 @@ class ProductBanHang extends Component<IProps> {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderItemSeparatorComponent}
           ListEmptyComponent={this.renderListEmptyComponent}
-          ListFooterComponent={this.renderListFooterComponent}
+          // ListFooterComponent={this.renderListFooterComponent}
           onEndReachedThreshold={0.1}
-          onEndReached={this.onEndReached}
+          // onEndReached={this.onEndReached}
           contentContainerStyle={CategoryStyle.contentContainerStyle}
         />
         {this.renderFooter()}

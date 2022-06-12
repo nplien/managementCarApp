@@ -1,5 +1,6 @@
 import {PersonalModel} from 'models/Personal.Model';
 import {IPersonalAction, IPersonalState} from './Personal.Types';
+import {StoersFake} from './StoresFake';
 
 export const PERSONAL_ACTION = {
   GET_INFO: 'ORDER/PERSONAL/GET_INFO',
@@ -90,7 +91,7 @@ const PersonalReducer = (
       return {
         ...state,
         isPersonLoading: false,
-        infoPersonal: action.payload.info
+        infoPersonal: {...action.payload.info, stores: StoersFake}
       };
     case PERSONAL_ACTION.GET_FAIL:
       return {
