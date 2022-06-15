@@ -31,14 +31,17 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
   render() {
     const {
       tongGiaTriHoaDonBan,
-      tongGiaTriHoaDonTra,
       tongSoHoaDonBan,
-      tongSoHoaDonTra,
       thoiGianLoc,
       khoangThoiGian,
       arrChiNhanhDaChonDashBoard,
       arrPhieuSuaChua
     } = this.props;
+    let tongPSC = 0;
+    for (let i = 0; i < arrPhieuSuaChua.length; i++) {
+      const element = arrPhieuSuaChua[i];
+      tongPSC += element.total_price;
+    }
 
     return (
       <MyView style={styles.container}>
@@ -81,7 +84,7 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
           }}>
           <MyView style={{flex: 1}} transparent>
             <MyText myFontStyle="Bold" style={{color: COLOR.TEXT.BLUE, fontSize: MY_SIZE.s_18}}>
-              {Utilities.convertCurrency(0)}
+              {Utilities.convertCurrency(tongPSC)}
             </MyText>
 
             <MyText style={{fontSize: MY_SIZE.s_14}}>

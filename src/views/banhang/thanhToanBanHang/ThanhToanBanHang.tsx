@@ -8,7 +8,7 @@ import {thanhToanStyles} from './styles/ThanhToanBanHang.Styles';
 import GiamGia from './components/GiamGia';
 import KhachThanhToan from './components/KhachThanhToan';
 import {ItemLineIndicator} from 'views/app/components/items';
-import GiaoHang from './components/GiaoHang';
+// import GiaoHang from './components/GiaoHang';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {thanhToan} from './redux';
@@ -38,7 +38,7 @@ class ThanhToanBanHang extends PureComponent<IProps> {
           <ItemLineIndicator />
           <KhachThanhToan />
           <KhachThuaTien />
-          <GiaoHang />
+          {/* <GiaoHang /> */}
         </ScrollView>
         <SafeAreaView edges={['left', 'bottom', 'right']}>
           <MyButton style={thanhToanStyles.btnBottomView} onPress={() => this.props.thanhToan()}>

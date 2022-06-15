@@ -11,7 +11,7 @@ import {
   ItemLineIndicatorCustom
 } from 'views/app/components/items';
 import {GetCustomer, ICustomerState, LoadMoreCustomer} from './redux';
-import {MyLoading, MyText, MyButtonIcon} from 'bases/components';
+import {MyLoading, MyText, MyButtonText, MyButtonIcon} from 'bases/components';
 import {CustomerStyle} from './style/Customer.Style';
 import {CustomerModel} from 'models/Customer.Model';
 import MyNavigator from 'utils/MyNavigator';
@@ -32,6 +32,9 @@ type IProps = IAppNavigateProps<'Customer'> &
     setObjectInforShip: typeof setObjectInforShip;
     setBangGia: typeof setBangGia;
   };
+
+const skip = 0;
+const limit = 20;
 
 class Customer extends React.Component<IProps> {
   chonKhachHang = (item: CustomerModel) => {
@@ -88,6 +91,15 @@ class Customer extends React.Component<IProps> {
     return item.toString();
   };
 
+  onEndReached = () => {
+    const {arrCustomer, count, isLoadMore} = this.props;
+    if (arrCustomer && count && arrCustomer.length >= count) return;
+    if (isLoadMore) return;
+    if (arrCustomer) {
+      this.props.LoadMoreCustomer(arrCustomer.length, limit);
+    }
+  };
+
   renderListFooterComponent = () => {
     if (this.props.isLoadMore) {
       return <MyLoading />;
@@ -119,12 +131,20 @@ class Customer extends React.Component<IProps> {
         );
       }
     });
+    const {isFirstLoading} = this.props;
+    if (isFirstLoading) {
+      this.props.GetCustomer(skip, limit);
+    }
   }
 
   shouldComponentUpdate(nextProps: IProps) {
     if (this.props.currentKhachHang !== nextProps.currentKhachHang) return false;
     return true;
   }
+
+  FnReloadCustomers = () => {
+    this.props.GetCustomer(skip, limit, true);
+  };
 
   renderListEmptyComponent = () => {
     const {isFirstLoading, isError} = this.props;
@@ -139,6 +159,11 @@ class Customer extends React.Component<IProps> {
       return (
         <MyView style={CustomerStyle.emptyCustomer}>
           <MyText>Không có dữ liệu</MyText>
+          <MyButtonText
+            onPress={() => this.FnReloadCustomers()}
+            title="Tải lại"
+            style={CustomerStyle.BtnEmpty}
+          />
         </MyView>
       );
     }
@@ -173,7 +198,7 @@ class Customer extends React.Component<IProps> {
   };
 
   render() {
-    const {isRefresh, arrCustomer} = this.props;
+    const {isRefresh, arrCustomer, count} = this.props;
     return (
       <MyView style={CustomerStyle.containerList}>
         <HeaderFilterSort />
@@ -183,14 +208,21 @@ class Customer extends React.Component<IProps> {
             ...setMargin(MY_SIZE.s_16, MY_SIZE.s_0, MY_SIZE.s_0, MY_SIZE.s_0)
           }}>
           <MyText myFontStyle="Medium" style={CustomerStyle.myTextTop}>
-            Tổng số {Utilities.convertCount(arrCustomer?.length)} khách hàng
+            Tổng số {Utilities.convertCount(count)} khách hàng
           </MyText>
         </MyView>
         <ItemLineIndicatorCustom />
         <FlatList
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
-          refreshControl={<RefreshControl refreshing={isRefresh ? isRefresh : false} />}
+          refreshControl={
+            <RefreshControl
+              refreshing={isRefresh ? isRefresh : false}
+              onRefresh={() => {
+                this.props.GetCustomer(skip, limit, true);
+              }}
+            />
+          }
           data={arrCustomer}
           extraData={arrCustomer}
           initialNumToRender={10}
@@ -198,8 +230,9 @@ class Customer extends React.Component<IProps> {
           ItemSeparatorComponent={this.renderItemSeparatorComponent}
           ListEmptyComponent={this.renderListEmptyComponent}
           keyExtractor={this.keyExtractor}
-          onEndReachedThreshold={0.1}
-          ListFooterComponent={this.renderListFooterComponent}
+          // onEndReached={this.onEndReached}
+          // onEndReachedThreshold={0.1}
+          // ListFooterComponent={this.renderListFooterComponent}
           ListHeaderComponent={this.renderListHeaderComponent}
           contentContainerStyle={{
             ...setRadius(MY_SIZE.s_0, MY_SIZE.s_0, MY_SIZE.s_16, MY_SIZE.s_16),

@@ -1,3 +1,4 @@
+import {CustomerModel} from 'models/Customer.Model';
 import {ICreatedBy} from 'models/ModelBase';
 import {IProductPCS} from 'models/PhieuSuaChua.Model';
 import {IProductPhuTung} from 'models/PhuTung.Model';
@@ -47,4 +48,7 @@ export type PayloadList = {
   };
   'CREATE/PSC/RESET': undefined;
   'CREATE/PSC/RESET_ARR_PSC': undefined;
+  'CHOOSE/KHACH/BAN/HANG/SET': {
+    currentKhachHang?: CustomerModel;
+  };
 };

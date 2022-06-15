@@ -1,11 +1,11 @@
 import {ScrollView} from 'react-native';
 import React, {useEffect, useRef} from 'react';
-import {MyButton, MyButtonText, MyInput, MyText, MyView} from 'bases/components';
+import {MyButton, MyButtonText, MyIcon, MyInput, MyText, MyView} from 'bases/components';
 import tw from 'utils/tailwind';
 import Svg, {Path} from 'react-native-svg';
 // import AddImages from './components/AddImages';
 import MyNavigator from 'utils/MyNavigator';
-import {useDispatch, useSelector} from 'react-redux';
+import {batch, useDispatch, useSelector} from 'react-redux';
 import {RootState} from 'views/app/redux';
 import {createAction} from 'views/app/redux/MyAction';
 import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
@@ -19,6 +19,9 @@ export default function AddTiepNhanXe(props: IProps) {
   const {params} = props.route;
   const typecar = useSelector((state: RootState) => state.TiepNhanXeReducer.typeCar);
   const arrTiepNhanXe = useSelector((state: RootState) => state.TiepNhanXeReducer.arrTiepNhanXe);
+  const currentKhachHang = useSelector(
+    (state: RootState) => state.ProductBanHangReducer.currentKhachHang
+  );
   const inputRef = useRef({
     name: params.itemTNX?.name || '',
     phone: params.itemTNX?.phone || '',
@@ -30,16 +33,25 @@ export default function AddTiepNhanXe(props: IProps) {
   const license_platesRef: any = useRef(null);
   useEffect(() => {
     return () => {
-      dispatch(
-        createAction('SET/TNX/TYPE_CAR', {
-          typeCar: {id: '', name: ''}
-        })
-      );
+      batch(() => {
+        dispatch(
+          createAction('SET/TNX/TYPE_CAR', {
+            typeCar: {id: '', name: ''}
+          })
+        );
+        dispatch(
+          createAction('CHOOSE/KHACH/BAN/HANG/SET', {
+            currentKhachHang: undefined
+          })
+        );
+      });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNhapPhieu = () => {
+    inputRef.current.name = currentKhachHang?.name || '';
+    inputRef.current.phone = currentKhachHang?.phone || '';
     if (!inputRef.current.name) {
       Utilities.showToast('Vui lòng nhập đầy đủ thông tin', 'Bạn chưa nhập tên chủ xe', 'warning');
       nameRef?.current.focus();
@@ -77,7 +89,15 @@ export default function AddTiepNhanXe(props: IProps) {
   return (
     <ScrollView style={tw.style(' bg-white')}>
       <MyView style={tw.style('px-16px mt-16px')}>
-        <MyText>Thông tin chủ xe</MyText>
+        <MyView style={tw.style('flex-row justify-between')}>
+          <MyText>Thông tin chủ xe</MyText>
+          <MyButton
+            onPress={() => MyNavigator.navigate('Customer', {type: 'CHON_KHACH_HANG'})}
+            style={tw.style('flex-row justify-between items-center')}>
+            <MyIcon name="person" iconFontType="MaterialIcons" size={20} color={COLOR.TEXT.GRAY} />
+            <MyText style={tw.style('ml-6px')}>{currentKhachHang?.name || 'Khách lẻ'}</MyText>
+          </MyButton>
+        </MyView>
         <MyInput
           inputRef={nameRef}
           style={tw.style('mt-16px h-40px')}
@@ -86,7 +106,8 @@ export default function AddTiepNhanXe(props: IProps) {
           onChangeText={text => {
             inputRef.current.name = text;
           }}
-          defaultValue={params.itemTNX?.name}
+          value={params.itemTNX?.name || currentKhachHang?.name || ''}
+          defaultValue={params.itemTNX?.name || currentKhachHang?.name}
         />
         <MyInput
           inputRef={phoneRef}
@@ -97,7 +118,8 @@ export default function AddTiepNhanXe(props: IProps) {
           onChangeText={text => {
             inputRef.current.phone = text;
           }}
-          defaultValue={params.itemTNX?.phone}
+          value={params.itemTNX?.phone || currentKhachHang?.phone || ''}
+          defaultValue={params.itemTNX?.phone || currentKhachHang?.phone}
         />
       </MyView>
       <MyView style={tw.style('px-16px mt-16px')}>

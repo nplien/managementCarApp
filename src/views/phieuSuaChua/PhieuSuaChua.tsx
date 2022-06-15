@@ -104,6 +104,7 @@ export default function PhieuSuaChua(props: IProps) {
       </MyView>
     );
   }
+  Utilities.log(arrPhieuSuaChua);
   return (
     <MyView style={[{backgroundColor: COLOR.BG.SECONDARY}, tw.style('flex-1')]}>
       <MyView style={tw.style('rounded-tl-16px rounded-tr-16px mt-16px')}>
