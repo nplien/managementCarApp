@@ -13,11 +13,6 @@ export const INFO_PRODUCT: InfoProduct[] = [
     title: 'Mã hàng'
   },
   {
-    id: '2',
-    key: 'barcode',
-    title: 'Mã vạch'
-  },
-  {
     id: '3',
     key: 'categories',
     title: 'Danh mục'
@@ -36,21 +31,6 @@ export const INFO_PRODUCT: InfoProduct[] = [
     id: '6',
     key: 'price',
     title: 'Giá bán'
-  },
-  {
-    id: '7',
-    key: 'expired_at',
-    title: 'Hạn sử dụng'
-  },
-  {
-    id: '8',
-    key: 'stock_muc_ton',
-    title: 'Định mức tồn'
-  },
-  {
-    id: '9',
-    key: 'stocks',
-    title: 'Tồn kho'
   }
 ];
 

@@ -47,21 +47,8 @@ class ChonChiNhanh extends PureComponent<IProps> {
   };
 
   render() {
-    const {infoPersonal, arrChiNhanhDaChonDashBoard} = this.props;
-
-    let title = '';
-
-    if (arrChiNhanhDaChonDashBoard && arrChiNhanhDaChonDashBoard.length) {
-      if (arrChiNhanhDaChonDashBoard.length === infoPersonal?.stores?.length) {
-        title = 'Tất cả chi nhánh';
-      } else if (arrChiNhanhDaChonDashBoard.length === 1) {
-        title = arrChiNhanhDaChonDashBoard[0].name || '1 chi nhánh';
-      } else {
-        title = 'Nhiều chi nhánh';
-      }
-    } else {
-      title = 'Tất cả chi nhánh';
-    }
+    const {infoPersonal} = this.props;
+    let title = infoPersonal?.stores && infoPersonal?.stores[0].name;
 
     return (
       <MyButton

@@ -2,7 +2,7 @@ import {IManagerBranchState} from './ManagerBranch.Type';
 import {IAppAction} from 'views/app';
 import Utilities from 'utils/Utilities';
 import {CONFIG_DATE_FILTER} from 'configs/FilterConfig';
-import {StoersFake} from 'views/personals/redux/StoresFake';
+import {StoersFake} from 'views/personals/redux/StoresData';
 
 export const MANAGER_BRANCH_ACTION = {
   IS_REFRESH: 'MANAGER/BRANCH/LIST/IS/REFRESH',

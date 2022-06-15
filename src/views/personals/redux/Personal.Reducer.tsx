@@ -1,6 +1,6 @@
 import {PersonalModel} from 'models/Personal.Model';
 import {IPersonalAction, IPersonalState} from './Personal.Types';
-import {StoersFake} from './StoresFake';
+import {StoersFake} from './StoresData';
 
 export const PERSONAL_ACTION = {
   GET_INFO: 'ORDER/PERSONAL/GET_INFO',

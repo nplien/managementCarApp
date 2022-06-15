@@ -100,7 +100,7 @@ export default class DetailsInvoice extends React.PureComponent<IDetailProps, ID
               )}
             </MyButton>
             <MyText myFontStyle={'Medium'} numberOfLines={2} style={detailStyles.textRight}>
-              {detail.created_by?.name}
+              {'Trần Tiến Long'}
             </MyText>
           </MyView>
           <MyView transparent style={[detailStyles.infoProdCenter, {marginTop: MY_SIZE.s_8}]}>

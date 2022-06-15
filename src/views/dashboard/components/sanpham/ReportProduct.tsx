@@ -19,7 +19,7 @@ export default function ReportProduct1() {
   const [state, setstate] = React.useState(initialState);
   const scrollRef = React.useRef<any>(undefined);
   const routes: any[] = [
-    {key: 'reportRevenueProduct', name: 'Theo doanh thu'},
+    // {key: 'reportRevenueProduct', name: 'Theo doanh thu'},
     {key: 'reportQtyProduct', name: 'Theo số lượng'}
   ];
   return (
@@ -63,9 +63,9 @@ export default function ReportProduct1() {
         bounces={true}
         horizontal
         pagingEnabled={true}>
-        <MyView style={styles.myviewFlex}>
+        {/* <MyView style={styles.myviewFlex}>
           <ReportRevenueProduct />
-        </MyView>
+        </MyView> */}
         <MyView style={styles.myviewFlex}>
           <ReportQtyProduct />
         </MyView>

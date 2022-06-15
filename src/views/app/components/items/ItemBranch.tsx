@@ -26,12 +26,12 @@ export default class ItemBranch extends React.Component<IProps, any> {
     return (
       <MyButton style={[styles.contentItem, propsStyle]} onPress={this.props.onPress}>
         <MyView>
-          <MyImage
+        <MyImage
             resizeMode={'cover'}
             style={styles.image}
-            height={styles.viewImage.height}
-            width={styles.viewImage.width}
-            source={Utilities.convertLinkImage(logo, IMAGE_SIZE.MEDIUM)}
+            source={{
+              uri: logo
+            }}
           />
         </MyView>
         <MyView style={styles.viewLeft}>
@@ -88,7 +88,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   image: {
-    ...setRadius(0, 0, 0, 0)
+    ...setRadius(0, 0, 0, 0),
+    height: MY_SIZE.s_64,
+    width: MY_SIZE.s_64,
   },
   viewImage: {
     height: MY_SIZE.s_64,

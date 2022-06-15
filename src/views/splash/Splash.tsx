@@ -16,6 +16,7 @@ import {IStorePerson} from 'models/ModelBase';
 import {PING_DOMAIN} from 'env';
 import {changeChiNhanhDashBoard} from 'views/dashboard/redux';
 import tw from 'utils/tailwind';
+import { StoersFake } from 'views/personals/redux/StoresData';
 
 interface IProps {
   changeChiNhanhDashBoard: typeof changeChiNhanhDashBoard;
@@ -68,7 +69,6 @@ class Splash extends Component<IProps, IState> {
       .then((result: any) => {
         let userLocal: PersonalModel = result[0][1] ? JSON.parse(result[0][1]) : undefined;
         let userToken: ITokenModel = result[1][1] ? JSON.parse(result[1][1]) : undefined;
-        let currentStore: IStorePerson = result[2][1] ? JSON.parse(result[2][1]) : undefined;
         if (userLocal && userToken) {
           MyStaticLocal.USER_ID = userLocal?.id || undefined;
           MyStaticLocal.USER_TOKEN = userToken || undefined;
@@ -79,11 +79,11 @@ class Splash extends Component<IProps, IState> {
           if (access - now > 0) {
             this.props.initUser(userLocal);
             this.props.getInfo();
-            if (currentStore) {
-              this.props.changeChiNhanhDashBoard([currentStore]);
-              this.props.chooseStore(currentStore);
+            if (StoersFake[0]) {
+              this.props.changeChiNhanhDashBoard([StoersFake[0]]);
+              this.props.chooseStore(StoersFake[0]);
             } else {
-              this.props.chooseStore(userLocal.stores?.length ? userLocal.stores[0] : undefined);
+              this.props.chooseStore(StoersFake[0]);
             }
             MyNavigator.reset('Home');
           } else {

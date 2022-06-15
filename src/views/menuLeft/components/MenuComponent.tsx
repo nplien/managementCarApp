@@ -35,10 +35,10 @@ class MenuComponent extends PureComponent<IProps> {
       icon: 'cart-outline'
     },
     {
-      screen: 'PhieuSuaChua',
-      name: 'Phiếu sửa chữa',
+      screen: 'Invoice',
+      name: 'Lịch sử hoá đơn',
       font: 'MaterialCommunityIcons',
-      icon: 'cart-outline'
+      icon: 'clipboard-list-outline'
     },
     {
       screen: 'TiepNhanXe',
@@ -47,10 +47,10 @@ class MenuComponent extends PureComponent<IProps> {
       icon: 'clipboard-list-outline'
     },
     {
-      screen: 'Invoice',
-      name: 'Lịch sử hoá đơn',
+      screen: 'PhieuSuaChua',
+      name: 'Phiếu sửa chữa',
       font: 'MaterialCommunityIcons',
-      icon: 'clipboard-list-outline'
+      icon: 'cart-outline'
     },
     // {
     //   screen: 'Order',
@@ -94,12 +94,12 @@ class MenuComponent extends PureComponent<IProps> {
     //   font: 'MaterialIcons',
     //   icon: 'local-shipping'
     // },
-    {
-      screen: 'ImportOrder',
-      name: 'Nhập hàng',
-      font: 'MaterialCommunityIcons',
-      icon: 'home-import-outline'
-    },
+    // {
+    //   screen: 'ImportOrder',
+    //   name: 'Nhập hàng',
+    //   font: 'MaterialCommunityIcons',
+    //   icon: 'home-import-outline'
+    // },
     {
       screen: 'ManagerBranch',
       name: 'Chi nhánh',

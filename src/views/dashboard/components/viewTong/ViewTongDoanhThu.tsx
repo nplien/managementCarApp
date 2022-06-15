@@ -36,7 +36,8 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
       tongSoHoaDonTra,
       thoiGianLoc,
       khoangThoiGian,
-      arrChiNhanhDaChonDashBoard
+      arrChiNhanhDaChonDashBoard,
+      arrPhieuSuaChua
     } = this.props;
 
     return (
@@ -80,11 +81,11 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
           }}>
           <MyView style={{flex: 1}} transparent>
             <MyText myFontStyle="Bold" style={{color: COLOR.TEXT.BLUE, fontSize: MY_SIZE.s_18}}>
-              {Utilities.convertCurrency(tongGiaTriHoaDonTra)}
+              {Utilities.convertCurrency(0)}
             </MyText>
 
             <MyText style={{fontSize: MY_SIZE.s_14}}>
-              {Utilities.convertCount(tongSoHoaDonTra)} Phiếu trả
+              {Utilities.convertCount(arrPhieuSuaChua.length)} Phiếu sửa chữa
             </MyText>
           </MyView>
           <MyIcon
@@ -114,6 +115,7 @@ const mapStateToProps = (state: RootState) => {
   const {tongGiaTriHoaDonBan, tongGiaTriHoaDonTra, tongSoHoaDonBan, tongSoHoaDonTra} =
     state.DashboardReducer;
   const {thoiGianLoc, khoangThoiGian, arrChiNhanhDaChonDashBoard} = state.DashboardReducer;
+  const {arrPhieuSuaChua} = state.PhieuSuaChuaReducer;
   return {
     tongGiaTriHoaDonBan,
     tongGiaTriHoaDonTra,
@@ -121,7 +123,8 @@ const mapStateToProps = (state: RootState) => {
     tongSoHoaDonTra,
     thoiGianLoc,
     khoangThoiGian,
-    arrChiNhanhDaChonDashBoard
+    arrChiNhanhDaChonDashBoard,
+    arrPhieuSuaChua
   };
 };
 const mapDispatchToProps = (dispatch: any) => {
