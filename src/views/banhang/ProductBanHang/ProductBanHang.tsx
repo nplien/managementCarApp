@@ -195,12 +195,8 @@ class ProductBanHang extends Component<IProps> {
   }
 
   reload = () => {
-    const {isFirstLoading, isLoadMore} = this.props;
-
-    if (!isFirstLoading && !isLoadMore) {
-      this.props.showRefreshBanHang(true);
-      this.props.GetProductBanHang();
-    }
+    this.props.showRefreshBanHang(true);
+    this.props.GetProductBanHang();
   };
 
   onEndReached = () => {
@@ -220,13 +216,6 @@ class ProductBanHang extends Component<IProps> {
 
   render() {
     const {arrProduct, isRefresh} = this.props;
-    arrProduct?.forEach((item, index) => {
-      const element = arrrProductNameTest.findIndex(value => value.id === item.id);
-      if (element > 1) {
-        arrProduct[index].name = arrrProductNameTest[element].name;
-        arrProduct[index].price = arrrProductNameTest[element].price;
-      }
-    });
 
     return (
       <MyView transparent style={CategoryStyle.container}>

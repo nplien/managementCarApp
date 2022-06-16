@@ -16,9 +16,12 @@ import TongTienHang from './components/TongTienHang';
 import PhiGiaoHang from './components/PhiGiaoHang';
 import KhachCanTra from './components/KhachCanTra';
 import KhachThuaTien from './components/KhachThuaTien';
+import {GetProductBanHang, showRefreshBanHang} from '../ProductBanHang/redux';
 
 interface IProps {
   thanhToan: typeof thanhToan;
+  GetProductBanHang: typeof GetProductBanHang;
+  showRefreshBanHang: typeof showRefreshBanHang;
 }
 
 class ThanhToanBanHang extends PureComponent<IProps> {
@@ -41,7 +44,13 @@ class ThanhToanBanHang extends PureComponent<IProps> {
           {/* <GiaoHang /> */}
         </ScrollView>
         <SafeAreaView edges={['left', 'bottom', 'right']}>
-          <MyButton style={thanhToanStyles.btnBottomView} onPress={() => this.props.thanhToan()}>
+          <MyButton
+            style={thanhToanStyles.btnBottomView}
+            onPress={() => {
+              this.props.thanhToan();
+              this.props.showRefreshBanHang(true);
+              this.props.GetProductBanHang();
+            }}>
             <MyText myFontStyle="Bold" style={{color: COLOR.TEXT.WHITE}}>
               Hoàn thành
             </MyText>
@@ -55,7 +64,9 @@ class ThanhToanBanHang extends PureComponent<IProps> {
 const mapDispatchToProps = (dispatch: any) => {
   return bindActionCreators(
     {
-      thanhToan
+      thanhToan,
+      GetProductBanHang,
+      showRefreshBanHang
     },
     dispatch
   );

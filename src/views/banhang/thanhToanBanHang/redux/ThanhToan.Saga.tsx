@@ -12,6 +12,8 @@ import {BANG_GIA_CHUNG, KHACH_LE, STORE_DEFAULT} from 'common/Constants';
 import {KieuKhuyenMai} from 'configs/ProductConfig';
 import {IProductInOrder} from 'models/Product.Model';
 import {IStorePerson} from 'models/ModelBase';
+import {IProductBanHangState, PRODUCT_BAN_HANG_ACTION} from 'views/banhang/ProductBanHang/redux';
+import {IAppAction} from 'views/app';
 
 function* thanhToan() {
   try {
@@ -172,6 +174,15 @@ function* thanhToan() {
       Utilities.showToast('Hoàn thành giao dịch!', '', 'success');
       yield put({
         type: THANH_TOAN_ACTION.THANH_TOAN_THANH_CONG
+      });
+      yield put<IAppAction<IProductBanHangState>>({
+        type: PRODUCT_BAN_HANG_ACTION.IS_REFRESH,
+        payload: {
+          isRefresh: true
+        }
+      });
+      yield put({
+        type: PRODUCT_BAN_HANG_ACTION.GET
       });
       MyNavigator.navigate('ProductBanHang');
     }

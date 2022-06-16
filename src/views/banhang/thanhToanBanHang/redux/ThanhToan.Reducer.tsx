@@ -79,6 +79,7 @@ const ThanhToanReducer = (
 
     case CREATE_SALE_ACTION.RESET:
     case THANH_TOAN_ACTION.THANH_TOAN_THANH_CONG:
+    case PRODUCT_BAN_HANG_ACTION.GET:
       return {
         ...state,
         discountType: KieuKhuyenMai.GIAM_THANG_TIEN,

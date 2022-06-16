@@ -7,6 +7,7 @@ import {IResponse} from 'services/ClientAPI';
 import {ProductOptionsModel} from 'models/Product.Model';
 import {IAppAction} from 'views/app';
 import {IProductBanHangState} from '.';
+import {arrrProductNameTest} from './ProductNameTest';
 
 function* getListProductBanHang() {
   try {
@@ -95,6 +96,13 @@ function* getListProductBanHang() {
     );
     if (!response.code) {
       let lengthData = response.data?.length || 0;
+      response.data?.forEach((item, index) => {
+        const element = arrrProductNameTest.findIndex(value => value.id === item.id);
+        if (element > 1) {
+          response.data[index].name = arrrProductNameTest[element].name;
+          response.data[index].price = arrrProductNameTest[element].price;
+        }
+      });
       yield put<IAppAction<IProductBanHangState>>({
         type: PRODUCT_BAN_HANG_ACTION.SUCCESS,
         payload: {
