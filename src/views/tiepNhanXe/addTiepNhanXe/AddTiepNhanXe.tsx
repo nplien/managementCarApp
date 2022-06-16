@@ -106,7 +106,6 @@ export default function AddTiepNhanXe(props: IProps) {
           onChangeText={text => {
             inputRef.current.name = text;
           }}
-          value={params.itemTNX?.name || currentKhachHang?.name || ''}
           defaultValue={params.itemTNX?.name || currentKhachHang?.name}
         />
         <MyInput
@@ -118,7 +117,6 @@ export default function AddTiepNhanXe(props: IProps) {
           onChangeText={text => {
             inputRef.current.phone = text;
           }}
-          value={params.itemTNX?.phone || currentKhachHang?.phone || ''}
           defaultValue={params.itemTNX?.phone || currentKhachHang?.phone}
         />
       </MyView>

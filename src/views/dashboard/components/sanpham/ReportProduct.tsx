@@ -8,7 +8,6 @@ import {
   ScrollView,
   StyleSheet
 } from 'react-native';
-import ReportRevenueProduct from './doanhthu/ReportRevenueProduct';
 import ReportQtyProduct from './soluong/ReportQtyProduct';
 
 const initialState = {
