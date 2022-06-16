@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import Utilities, {hexToRGBA} from 'utils/Utilities';
 import {ItemLineIndicatorCustom} from 'views/app/components/items';
 import {RootState} from 'views/app/redux/App.Reducer';
+import {arrrProductNameTest} from 'views/banhang/ProductBanHang/redux/ProductNameTest';
 import {IDashboardState} from 'views/dashboard/redux';
 
 interface IProps extends IDashboardState {}
@@ -48,6 +49,12 @@ class ReportQtyProduct extends Component<IProps> {
   render() {
     const {arrProductReportByQuantity, isTop10ForQty} = this.props;
     if (isTop10ForQty) return <MyLoading />;
+    arrProductReportByQuantity?.forEach((item, index) => {
+      const element = arrrProductNameTest.findIndex(value => value.id === item.product_id);
+      if (element > 1) {
+        arrProductReportByQuantity[index].product_name = arrrProductNameTest[element].name;
+      }
+    });
     return (
       <MyView style={styles.container}>{arrProductReportByQuantity?.map(this.renderItem)}</MyView>
     );
