@@ -11,42 +11,90 @@ export const arrrProductNameTest = [
   {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16140},
   {
     id: 16154,
-    name: 'SOSS'
+    sku: 'F01',
+    name: 'Decal xe ô tô'
   },
   {
     id: 16132,
-    name: 'SPTEST0006'
+    sku: 'BWM01',
+    name: 'Bầu lực trợ phanh - BMW 318i'
   },
   {
     id: 16123,
-    name: 'Váy Trễ Vai Tùng Xòe 1VA1471XK - S'
+    sku: 'M01',
+    name: 'Dầu hộp số tự động'
   },
   {
     id: 16131,
-    name: 'SPTEST0005'
+    sku: 'BMW02',
+    name: 'Bóng hơi giảm xóc - BMW X5'
   },
   {
     id: 16121,
-    name: 'Váy Hoa Cam Phối Ren 1VA01747BE - M'
+    sku: 'PT01',
+    name: 'Dung dịch nước làm mát'
   },
   {
     id: 16111,
-    name: 'SPDEMO0006 - L (cai)'
+    sku: 'BWM03',
+    name: 'Lazang ô tô - BMW'
   },
   {
     id: 16106,
-    name: 'SPDEMO005'
+    sku: 'PT02',
+    name: 'Bọc da ghế'
   },
   {
     id: 16120,
-    name: 'Váy Hoa Cam Phối Ren 1VA01747BE - S'
+    sku: 'PT03',
+    name: 'Dầu trợ lực lái'
   },
   {
     id: 16125,
-    name: 'Váy Trễ Vai Tùng Xòe 1VA1471XK - M'
+    sku: 'PT04',
+    name: 'Dây curoa động cơ và dây curoa cam'
   },
   {
     id: 16117,
-    name: 'Váy Hoa Hồng 4 Tầng Nhún 1VA01809BE - S'
-  }
+    sku: 'BMW04',
+    name: 'Cảm biến báo mòn má - BMW 318i'
+  },
+  {
+    "id": 16157,
+    sku: '',
+    "name": "Ốp Gương Chiếu Hậu Kia K3, Sorento",
+   
+  },
+  {
+    "id": 16156,
+    sku: 'K01',
+    "name": "Công Tắc Mở Cốp Kia Morning",
+    
+  },
+  {
+    "id": 16155,
+    sku: 'K02',
+    "name": "Túi Khí Phụ - Kia Morning",
+    
+  },
+  {
+    "id": 16153,
+    sku: 'M04',
+    "name": "Cảm biến gió - Mazda 3",
+  },
+  {
+    "id": 16152,
+    sku: 'M05',
+    "name": "Ốp gương - Mazda 6",
+  },
+  {
+    "id": 16151,
+    sku: 'PT06',
+    "name": "Cảm biến kích nổ",
+  },
+  {
+    "id": 16150,
+    sku: 'F03',
+    "name": "Guốc phanh sau",
+  },
 ];
