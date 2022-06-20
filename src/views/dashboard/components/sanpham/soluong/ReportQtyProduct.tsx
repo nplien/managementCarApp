@@ -53,6 +53,7 @@ class ReportQtyProduct extends Component<IProps> {
       const element = arrrProductNameTest.findIndex(value => value.id === item.product_id);
       if (element > 1) {
         arrProductReportByQuantity[index].product_name = arrrProductNameTest[element].name;
+        arrProductReportByQuantity[index].product_sku = arrrProductNameTest[element].sku;
       }
     });
     return (

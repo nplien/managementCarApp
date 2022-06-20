@@ -36,8 +36,8 @@ function* getListProductBanHang() {
     }
 
     let param: any = {
-      skip: 0,
-      limit: 10,
+      skip: 3,
+      limit: 20,
       sort_by: sortBy,
       order_by: orderBy
     };
@@ -100,7 +100,7 @@ function* getListProductBanHang() {
         const element = arrrProductNameTest.findIndex(value => value.id === item.id);
         if (element > 1) {
           response.data[index].name = arrrProductNameTest[element].name;
-          response.data[index].price = arrrProductNameTest[element].price;
+          response.data[index].sku = arrrProductNameTest[element].sku;
         }
       });
       yield put<IAppAction<IProductBanHangState>>({
@@ -108,7 +108,7 @@ function* getListProductBanHang() {
         payload: {
           arrProduct: response.data,
           isStop: lengthData < limit,
-          count: response.count
+          count: response.data.length
         }
       });
     } else {

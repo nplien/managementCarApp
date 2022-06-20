@@ -1,14 +1,14 @@
 export const arrrProductNameTest = [
-  {name: ' LG01 Lọc gió điều hòa ', price: 120000, id: 16149},
-  {name: 'LG02 Lọc gió động cơ ', price: 350000, id: 16148},
-  {name: 'CG01 Cần gạt mưa  ', price: 679000, id: 16146},
-  {name: 'CG01 Cần gạt mưa  ', price: 560000, id: 16147},
-  {name: ' BAQ Bình ắc quy ', price: 2000000, id: 16145},
-  {name: 'BDP Bảo dưỡng phanh  ', price: 200000, id: 16144},
-  {name: '. VS01 Vệ sinh Bu zi  ', price: 200000, id: 16143},
-  {name: 'LX01 Lốp xe', price: 560000, id: 16141},
-  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16142},
-  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16140},
+  {name: ' LG01 Lọc gió điều hòa ', price: 120000, id: 16149, sku: 'TT1'},
+  {name: 'LG02 Lọc gió động cơ ', price: 350000, id: 16148, sku: 'LG02'},
+  {name: 'CG01 Cần gạt mưa  ', price: 679000, id: 16146, sku: 'CG01'},
+  {name: 'CG01 Cần gạt mưa  ', price: 560000, id: 16147, sku: 'CG012'},
+  {name: ' BAQ Bình ắc quy ', price: 2000000, id: 16145, sku: 'BAQ'},
+  {name: 'BDP Bảo dưỡng phanh  ', price: 200000, id: 16144, sku: 'BDP'},
+  {name: 'VS01 Vệ sinh Bu zi  ', price: 200000, id: 16143, sku: 'VS01'},
+  {name: 'LX01 Lốp xe', price: 560000, id: 16141, sku: 'LG04'},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16142, sku: 'LG06'},
+  {name: 'LG02 Lọc gió động cơ ', price: 120000, id: 16140, sku: 'LG52'},
   {
     id: 16154,
     sku: 'F01',
@@ -60,41 +60,38 @@ export const arrrProductNameTest = [
     name: 'Cảm biến báo mòn má - BMW 318i'
   },
   {
-    "id": 16157,
-    sku: '',
-    "name": "Ốp Gương Chiếu Hậu Kia K3, Sorento",
-   
+    id: 16157,
+    sku: 'G1',
+    name: 'Ốp Gương Chiếu Hậu Kia K3, Sorento'
   },
   {
-    "id": 16156,
+    id: 16156,
     sku: 'K01',
-    "name": "Công Tắc Mở Cốp Kia Morning",
-    
+    name: 'Công Tắc Mở Cốp Kia Morning'
   },
   {
-    "id": 16155,
+    id: 16155,
     sku: 'K02',
-    "name": "Túi Khí Phụ - Kia Morning",
-    
+    name: 'Túi Khí Phụ - Kia Morning'
   },
   {
-    "id": 16153,
+    id: 16153,
     sku: 'M04',
-    "name": "Cảm biến gió - Mazda 3",
+    name: 'Cảm biến gió - Mazda 3'
   },
   {
-    "id": 16152,
+    id: 16152,
     sku: 'M05',
-    "name": "Ốp gương - Mazda 6",
+    name: 'Ốp gương - Mazda 6'
   },
   {
-    "id": 16151,
+    id: 16151,
     sku: 'PT06',
-    "name": "Cảm biến kích nổ",
+    name: 'Cảm biến kích nổ'
   },
   {
-    "id": 16150,
+    id: 16150,
     sku: 'F03',
-    "name": "Guốc phanh sau",
-  },
+    name: 'Guốc phanh sau'
+  }
 ];

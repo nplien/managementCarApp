@@ -7,10 +7,11 @@ import {IResponse} from 'services/ClientAPI';
 import {ProductModel, StockProduct} from 'models/Product.Model';
 import {IAppAction} from 'views/app';
 import {IProductHangHoaState} from '.';
+import {arrrProductNameTest} from 'views/banhang/ProductBanHang/redux/ProductNameTest';
 
 function* getListProductHangHoa() {
   try {
-    const limit = 10;
+    const limit = 20;
 
     const rootState: RootState = yield select();
 
@@ -35,7 +36,7 @@ function* getListProductHangHoa() {
     }
 
     let param: any = {
-      skip: 0,
+      skip: 3,
       limit: limit,
       sort_by: sortBy,
       order_by: orderBy
@@ -91,16 +92,23 @@ function* getListProductHangHoa() {
       stock_id: rootState.ChooseStoreReducer.cuaHangDangChon?.id || 1
     };
     const response: IResponse<ProductModel[], StockProduct> = yield call(() =>
-      ProductAPI.getListProductHangHoa(param)
+      ProductAPI.getListProductSale(param)
     );
     if (!response.code) {
       let lengthData = response.data?.length || 0;
+      response.data?.forEach((item, index) => {
+        const element = arrrProductNameTest.findIndex(value => value.id === item.id);
+        if (element > 1) {
+          response.data[index].name = arrrProductNameTest[element].name;
+          response.data[index].sku = arrrProductNameTest[element].sku || '';
+        }
+      });
       yield put<IAppAction<IProductHangHoaState>>({
         type: PRODUCT_HANG_HOA_ACTION.SUCCESS,
         payload: {
           arrProduct: response.data,
           isStop: lengthData < limit,
-          count: response.count,
+          count: lengthData,
           tong_ton_kho: Number(response.sum?.total_quantity || 0)
         }
       });

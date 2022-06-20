@@ -25,7 +25,6 @@ import BottomManyChoose from './components/BottomManyChoose';
 import {BHCustomerandPrice, CategoryStyle} from './styles/ProductHangHoa.Style';
 import {BANG_GIA_CHUNG} from 'common/Constants';
 import {IChooseStoreState} from 'views/menuLeft/redux';
-import {arrrProductNameTest} from './redux/ProductNameTest';
 
 interface IProps extends IProductBanHangState, IChooseStoreState {
   GetProductBanHang: typeof GetProductBanHang;
@@ -112,7 +111,7 @@ class ProductBanHang extends Component<IProps> {
   renderItem = ({item}: {item: ProductOptionsModel}) => {
     const {currentBangGia, cuaHangDangChon} = this.props;
     // const {price_books} = item;
-    let price = item.price || 0;
+    let price = item.price;
     // if (price_books) {
     //   let found = price_books.findIndex(x => x.id === currentBangGia?.id);
     //   if (found > -1) {
