@@ -80,7 +80,7 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
             this.props.setFilterDateInvoice(thoiGianLoc, khoangThoiGian);
             this.props.setStoreInvoice(arrChiNhanhDaChonDashBoard);
             this.props.setOnRefreshInvoice(true);
-            MyNavigator.navigate('Invoice', {isFromReport: false});
+            MyNavigator.navigate('PhieuSuaChua');
           }}>
           <MyView style={{flex: 1}} transparent>
             <MyText myFontStyle="Bold" style={{color: COLOR.TEXT.BLUE, fontSize: MY_SIZE.s_18}}>

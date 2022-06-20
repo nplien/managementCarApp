@@ -3,7 +3,7 @@ import {MyButton, MyText} from 'bases/components';
 import {COLOR} from 'bases/styles/Core';
 import {thanhToanStyles} from 'views/banhang/thanhToanBanHang/styles/ThanhToanBanHang.Styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {useDispatch, useSelector} from 'react-redux';
+import {batch, useDispatch, useSelector} from 'react-redux';
 import {createAction} from 'views/app/redux/MyAction';
 import {IProductInPSC, IProductPCS} from 'models/PhieuSuaChua.Model';
 import {RootState} from 'views/app/redux';
@@ -11,6 +11,7 @@ import Utilities from 'utils/Utilities';
 import {IPaymentOrderModel} from 'models/Payment.Model';
 import {PAYMENT_METHOD} from 'configs/FilterConfig';
 import MyNavigator from 'utils/MyNavigator';
+import {dataPhuTungFake} from 'views/phieuSuaChua/addPhieuSuaChua/components/DataPhuTungFake';
 
 export default function ButtomThanhToanPSC() {
   const arrPhieuSuaChua = useSelector(
@@ -121,13 +122,24 @@ export default function ButtomThanhToanPSC() {
       phieuSuaChuaTPM.total_paid = thanhToanInOrder[0].value;
     }
     Utilities.log(phieuSuaChuaTPM);
-    dispatch(
-      createAction('THANH/TOAN/ACTION_PSC', {
-        phieuSuaChua: phieuSuaChuaTPM
-      })
-    );
-    dispatch(createAction('CREATE/PSC/RESET'));
-    dispatch(createAction('SET/PSC/CURRENT_TIEP_NHAN_XE', {currenTiepNhanXe: undefined}));
+    for (let i = 0; i < dataPhuTungFake.length; i++) {
+      const element = dataPhuTungFake[i];
+      const itemPhuTung = arrProductPSC.find(x => x.phuTung?.id === element.id);
+      if (itemPhuTung && itemPhuTung.phuTung) {
+        element.total_quantity = element.total_quantity - itemPhuTung.totalQty;
+      }
+    }
+    Utilities.log(dataPhuTungFake);
+    batch(() => {
+      dispatch(
+        createAction('THANH/TOAN/ACTION_PSC', {
+          phieuSuaChua: phieuSuaChuaTPM
+        })
+      );
+      dispatch(createAction('SET/PSC/ARR_PHU_TUNG', {arrPhuTungTmp: dataPhuTungFake}));
+      dispatch(createAction('CREATE/PSC/RESET'));
+      dispatch(createAction('SET/PSC/CURRENT_TIEP_NHAN_XE', {currenTiepNhanXe: undefined}));
+    });
     MyNavigator.popToTop();
   };
   return (

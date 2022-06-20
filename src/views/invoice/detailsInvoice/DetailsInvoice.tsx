@@ -18,6 +18,7 @@ import MyNavigator from 'utils/MyNavigator';
 import BotPriceView from './components/BotPriceView';
 import {KHACH_LE} from 'common/Constants';
 import {IAppNavigateProps} from 'views/app';
+import {arrrProductNameTest} from 'views/banhang/ProductBanHang/redux/ProductNameTest';
 
 type IDetailProps = IAppNavigateProps<'DetailsInvoice'>;
 
@@ -216,6 +217,14 @@ export default class DetailsInvoice extends React.PureComponent<IDetailProps, ID
       );
     }
     const {detail} = this.state;
+    let arrDetail: ProductOrderModel[] = detail.products || [];
+    arrDetail?.forEach((item, index) => {
+      const element = arrrProductNameTest.findIndex(value => value.id === item.option_id);
+      if (element > 1) {
+        arrDetail[index].name = arrrProductNameTest[element].name;
+        arrDetail[index].sku = arrrProductNameTest[element].sku;
+      }
+    });
     return (
       <MyView style={detailStyles.container}>
         {this.state.isError ? (
@@ -234,8 +243,8 @@ export default class DetailsInvoice extends React.PureComponent<IDetailProps, ID
                 }
               );
             }}
-            data={detail.products}
-            extraData={detail.products}
+            data={arrDetail}
+            extraData={arrDetail}
             keyExtractor={(item, index) => index.toString()}
             renderItem={this._renderItem}
             ItemSeparatorComponent={() => <ItemLineIndicator />}

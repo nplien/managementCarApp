@@ -58,12 +58,12 @@ class MenuComponent extends PureComponent<IProps> {
     //   font: 'MaterialIcons',
     //   icon: 'inbox'
     // },
-    // {
-    //   screen: 'ReturnOrder',
-    //   name: 'Trả hàng',
-    //   font: 'MaterialCommunityIcons',
-    //   icon: 'cart-arrow-up'
-    // },
+    {
+      screen: 'PhuTung',
+      name: 'Phụ Tùng',
+      font: 'MaterialCommunityIcons',
+      icon: 'cart-arrow-up'
+    },
     {
       screen: 'Customer',
       name: 'Khách hàng',

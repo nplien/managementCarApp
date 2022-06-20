@@ -20,6 +20,8 @@ import TypeCarModal from 'views/tiepNhanXe/addTiepNhanXe/components/TypeCarModal
 import CreatedPSC from 'views/createPSC/CreatedPSC';
 import ThanhToanPSC from 'views/createPSC/ThanhToanPSC';
 import DetailPSC from 'views/phieuSuaChua/detialPSC/DetailPSC';
+import PhuTung from 'views/phuTung/PhuTung';
+import AddPhuTung from 'views/phuTung/AddPhuTung';
 
 const Login = register({loader: () => import('views/account/Login')});
 const PersonalView = register({
@@ -873,6 +875,16 @@ class Router extends PureComponent {
               name="DetailPSC"
               options={{title: 'Chi tiết Phiếu sửa chữa', gestureEnabled: false}}
               component={DetailPSC}
+            />
+            <RootStack.Screen
+              name="PhuTung"
+              options={{title: 'Phụ Tùng', gestureEnabled: false}}
+              component={PhuTung}
+            />
+            <RootStack.Screen
+              name="AddPhuTung"
+              options={{title: 'Thêm Phụ Tùng', gestureEnabled: false}}
+              component={AddPhuTung}
             />
           </RootStack.Group>
           <RootStack.Group

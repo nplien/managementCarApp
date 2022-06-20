@@ -1,5 +1,5 @@
 import {IProductPCS} from 'models/PhieuSuaChua.Model';
-import {IProductPhuTung} from 'models/PhuTung.Model';
+import {IPhuTungModel, IProductPhuTung} from 'models/PhuTung.Model';
 import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
 import {MyReduxAction, PayloadList} from 'views/app/redux/MyAction.Type';
 
@@ -10,11 +10,14 @@ type IStatusPSCStates = {
   currenTiepNhanXe?: ITiepNhanXeModel;
   phieuSuaChua?: IProductPCS;
   arrPhieuSuaChua: IProductPCS[];
+  arrPhuTungTmp: IPhuTungModel[];
+  objPhuTungTmp?: IPhuTungModel;
 };
 
 const initialStates: IStatusPSCStates = {
   arrPhuTung: [],
-  arrPhieuSuaChua: []
+  arrPhieuSuaChua: [],
+  arrPhuTungTmp: []
 };
 const PhieuSuaChuaReducer = (state: IStatusPSCStates = initialStates, action: MyReduxAction) => {
   switch (action.type) {
@@ -143,6 +146,33 @@ const PhieuSuaChuaReducer = (state: IStatusPSCStates = initialStates, action: My
         ...state,
         arrPhieuSuaChua: []
       };
+    }
+    case 'SET/PSC/ARR_PHU_TUNG': {
+      const payload = action.payload as PayloadList['SET/PSC/ARR_PHU_TUNG'];
+      return {
+        ...state,
+        arrPhuTungTmp: payload.arrPhuTungTmp
+      };
+    }
+    case 'SET/PSC/OBJ_PHU_TUNG': {
+      const payload = action.payload as PayloadList['SET/PSC/OBJ_PHU_TUNG'];
+      let objTMP = state.arrPhuTungTmp?.find(x => x.id === payload.objPhuTungTmp?.id);
+      if (objTMP) {
+        return {
+          ...state,
+          arrPhuTungTmp: state.arrPhuTungTmp?.map(x => {
+            if (x.id === payload.objPhuTungTmp?.id) {
+              x = payload.objPhuTungTmp;
+            }
+            return x;
+          })
+        };
+      } else {
+        return {
+          ...state,
+          arrPhuTungTmp: [...state.arrPhuTungTmp, payload.objPhuTungTmp]
+        };
+      }
     }
 
     default:

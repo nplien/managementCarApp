@@ -165,8 +165,8 @@ export function changeChiNhanhDashBoard(arrChiNhanhDaChonDashBoard: IStorePerson
 
 const DashboardReducer = (
   state: IDashboardState = {
-    thoiGianLoc: CONFIG_DATE_FILTER.DASHBOARD[1],
-    khoangThoiGian: Utilities.getDateFilter(CONFIG_DATE_FILTER.DASHBOARD[1].id),
+    thoiGianLoc: CONFIG_DATE_FILTER.DASHBOARD[0],
+    khoangThoiGian: Utilities.getDateFilter(CONFIG_DATE_FILTER.DASHBOARD[0].id),
     isFirstLoading: true,
     isRefresh: false,
     isError: false,

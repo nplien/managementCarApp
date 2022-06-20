@@ -50,8 +50,8 @@ export default function AddTiepNhanXe(props: IProps) {
   }, []);
 
   const handleNhapPhieu = () => {
-    inputRef.current.name = currentKhachHang?.name || '';
-    inputRef.current.phone = currentKhachHang?.phone || '';
+    inputRef.current.name = inputRef.current.name || currentKhachHang?.name || '';
+    inputRef.current.phone = inputRef.current.phone || currentKhachHang?.phone || '';
     if (!inputRef.current.name) {
       Utilities.showToast('Vui lòng nhập đầy đủ thông tin', 'Bạn chưa nhập tên chủ xe', 'warning');
       nameRef?.current.focus();

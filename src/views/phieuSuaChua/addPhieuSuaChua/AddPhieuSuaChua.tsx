@@ -1,138 +1,3 @@
-// import {FlatList} from 'react-native';
-// import React, {useEffect, useState} from 'react';
-// import {dataPhuTungFake} from './components/DataPhuTungFake';
-// import {MyView, MyLoading} from 'bases/components';
-// import tw from 'utils/tailwind';
-// import {IPhuTungModel, IProductPhuTung} from 'models/PhuTung.Model';
-// import {useDispatch, useSelector} from 'react-redux';
-// import {createAction} from 'views/app/redux/MyAction';
-// import HeaderSelectedPhuTung from './components/HeaderSelectedPhuTung';
-// import {RootState} from 'views/app/redux';
-// import {ItemPhuTung} from './components/ItemPhuTung';
-// import ChonTiepNhanXe from './components/ChonTiepNhanXe';
-// import BottomChoosePhuTung from './components/BottomChoosePhuTung';
-// import MyNavigator from 'utils/MyNavigator';
-// export default function AddPhieuSuaChua() {
-//   const dispatch = useDispatch();
-//   const isSelectedManyPSC = useSelector(
-//     (state: RootState) => state.PhieuSuaChuaReducer.isSelectedManyPSC
-//   );
-//   const [isFirstLoading, setIsFirstLoading] = useState(true);
-
-//   let mapItemRef: Map<number, any> = new Map();
-
-//   useEffect(() => {
-//     const timer1 = setTimeout(() => {
-//       setIsFirstLoading(false);
-//     }, 500);
-//     return function cleanup() {
-//       clearTimeout(timer1);
-//     };
-//   });
-
-//   const handleItem = (item: IPhuTungModel) => {
-//     if (isSelectedManyPSC) {
-//       mapItemRef.get(item.id).setCheck();
-//     } else {
-//       dispatch(
-//         createAction('SET/PSC/SELECTED_PHU_TUNG', {
-//           productPhuTung: {
-//             phuTung: item,
-//             totalQty: 1
-//           }
-//         })
-//       );
-//       MyNavigator.navigate('CreatedPSC');
-//     }
-//   };
-//   const pressXongChonNhieu = () => {
-//     const arrItemPhuTungDaChon: IProductPhuTung[] = [];
-//     const arrItemProductDaChon: IPhuTungModel[] = [];
-//     for (let [, value] of mapItemRef) {
-//       if (value) {
-//         if (value.getIsCheck()) {
-//           value.setCheck();
-//           arrItemPhuTungDaChon.push({
-//             phuTung: value.getItem(),
-//             totalQty: 1
-//           });
-//           arrItemProductDaChon.push(value.getItem());
-//         }
-//       }
-//     }
-//     dispatch(createAction('SET/PSC/LIST_PHU_TUNG', {arrPhuTung: arrItemPhuTungDaChon}));
-//     // this.props.addListProductToCart(arrItemSaleDaChon);
-//     MyNavigator.navigate('CreatedPSC');
-//   };
-//   const pressHuyChonNhieu = () => {
-//     dispatch(
-//       createAction('SET/PSC/IS/MANY/SELECTED', {
-//         isSelectedManyPSC: false
-//       })
-//     );
-//     for (let [, value] of mapItemRef) {
-//       if (value) {
-//         if (value.getIsCheck()) {
-//           value.setCheck();
-//         }
-//       }
-//     }
-//   };
-
-//   const keyExtractor = (item: any, index: number) => item.id?.toString() || index.toString();
-//   const renderItemSeparatorComponent = () => (
-//     <MyView style={tw.style('m-2px h-1px bg-stone-200')} />
-//   );
-//   const renderItem = ({item}: {item: IPhuTungModel}) => {
-//     return (
-//       <ItemPhuTung
-//         ref={node => {
-//           mapItemRef.set(item.id, node);
-//         }}
-//         itemProduct={item}
-//         onPress={() => handleItem(item)}
-//       />
-//     );
-//   };
-//   const renderHeader = () => (
-//     <MyView transparent>
-//       <ChonTiepNhanXe />
-//       <HeaderSelectedPhuTung huySelectedMany={pressHuyChonNhieu} />
-//     </MyView>
-//   );
-//   const renderFooter = () => (
-//     <BottomChoosePhuTung
-//       pressHuyChonNhieu={pressHuyChonNhieu}
-//       pressXongChonNhieu={pressXongChonNhieu}
-//     />
-//   );
-//   if (isFirstLoading) {
-//     return (
-//       <MyView style={tw.style('flex-1')}>
-//         <MyLoading />
-//       </MyView>
-//     );
-//   }
-//   return (
-//     <MyView transparent style={tw.style('flex-1')}>
-//       {renderHeader()}
-//       <FlatList
-//         showsHorizontalScrollIndicator={false}
-//         showsVerticalScrollIndicator={false}
-//         bounces={false}
-//         extraData={dataPhuTungFake}
-//         data={dataPhuTungFake}
-//         keyExtractor={keyExtractor}
-//         renderItem={renderItem}
-//         ItemSeparatorComponent={renderItemSeparatorComponent}
-//         contentContainerStyle={tw.style(' px-8px pt-16px pb-60px bg-white rounded-16px ')}
-//         style={tw.style('pb-60px')}
-//       />
-//       {renderFooter()}
-//     </MyView>
-//   );
-// }
-
 import React, {Component} from 'react';
 import {FlatList} from 'react-native';
 import {connect} from 'react-redux';
@@ -141,7 +6,6 @@ import {ItemLineIndicator} from 'views/app/components/items';
 import {RootState} from 'views/app/redux/App.Reducer';
 import {bindActionCreators} from 'redux';
 
-import {dataPhuTungFake} from './components/DataPhuTungFake';
 import {IPhuTungModel, IProductPhuTung} from 'models/PhuTung.Model';
 import {ItemPhuTung} from './components/ItemPhuTung';
 import MyNavigator from 'utils/MyNavigator';
@@ -249,14 +113,15 @@ class AddPhieuSuaChua extends Component<IProps> {
   }
 
   render() {
+    const {arrPhuTungTmp} = this.props;
     return (
       <MyView transparent style={CategoryStyle.container}>
         {this.renderHeader()}
         <FlatList
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
-          extraData={dataPhuTungFake}
-          data={dataPhuTungFake}
+          extraData={arrPhuTungTmp}
+          data={arrPhuTungTmp}
           initialNumToRender={10}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
@@ -273,7 +138,8 @@ class AddPhieuSuaChua extends Component<IProps> {
 
 const mapStateToProps = (state: RootState) => {
   const {isSelectedManyPSC} = state.CreatePSCReducer;
-  return {isSelectedManyPSC};
+  const {arrPhuTungTmp} = state.PhieuSuaChuaReducer;
+  return {isSelectedManyPSC, arrPhuTungTmp};
 };
 
 const mapDispatchToProps = (dispatch: any) => {

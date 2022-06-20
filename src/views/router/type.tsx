@@ -4,6 +4,7 @@ import {CustomerModel} from 'models/Customer.Model';
 import {IStorePerson} from 'models/ModelBase';
 import {PaymentModel} from 'models/Order.Model';
 import {IProductPCS} from 'models/PhieuSuaChua.Model';
+import {IPhuTungModel} from 'models/PhuTung.Model';
 import {IStaffModel} from 'models/Staff.Model';
 import {IStoreModel} from 'models/Store.Model';
 import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
@@ -123,6 +124,11 @@ export type RouterParamsList = {
   ThanhToanPSC: undefined;
   DetailPSC: {
     detailPSC: IProductPCS;
+  };
+  PhuTung: undefined;
+  AddPhuTung: {
+    type: 'update' | 'nomal';
+    itemPhuTung?: IPhuTungModel;
   };
 };
 
