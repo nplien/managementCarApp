@@ -20,21 +20,21 @@ interface IProps {
 class TabTonKho extends Component<IProps> {
   renderItem = ({item}: {item: StoreModel}) => {
     const {productCha, productCon} = this.props;
-
     if (productCon) {
-      return <ItemTonKho item={item} listStock={productCon.stocks || []} />;
+      return <ItemTonKho productCha={productCha} item={item} listStock={productCon.stocks || []} />;
     }
 
-    if (productCha && productCha.products) {
+    if (productCha && productCha.stocks) {
       let listStock: StockProduct[] = [];
-      for (let index = 0; index < productCha.products.length; index++) {
-        const element = productCha.products[index];
-        listStock = listStock.concat(element.stocks || []);
+      for (let index = 0; index < productCha.stocks?.length; index++) {
+        const element = productCha.stocks[index];
+        listStock = listStock.concat(element || []);
       }
-      return <ItemTonKho item={item} listStock={listStock} />;
+
+      return <ItemTonKho productCha={productCha} item={item} listStock={listStock} />;
     }
 
-    return <ItemTonKho item={item} listStock={[]} />;
+    return <ItemTonKho productCha={productCha} item={item} listStock={[]} />;
   };
 
   keyExtractor = (item: StoreModel) => {

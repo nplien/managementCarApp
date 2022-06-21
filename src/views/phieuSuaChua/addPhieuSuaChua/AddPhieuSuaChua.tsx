@@ -113,15 +113,16 @@ class AddPhieuSuaChua extends Component<IProps> {
   }
 
   render() {
-    const {arrPhuTungTmp} = this.props;
+    const {arrPhuTungTmp, arrProduct} = this.props;
+    const children = arrPhuTungTmp?.concat(arrProduct);
     return (
       <MyView transparent style={CategoryStyle.container}>
         {this.renderHeader()}
         <FlatList
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
-          extraData={arrPhuTungTmp}
-          data={arrPhuTungTmp}
+          extraData={children}
+          data={children}
           initialNumToRender={10}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
@@ -139,7 +140,8 @@ class AddPhieuSuaChua extends Component<IProps> {
 const mapStateToProps = (state: RootState) => {
   const {isSelectedManyPSC} = state.CreatePSCReducer;
   const {arrPhuTungTmp} = state.PhieuSuaChuaReducer;
-  return {isSelectedManyPSC, arrPhuTungTmp};
+  const {arrProduct} = state.ProductHangHoaReducer;
+  return {isSelectedManyPSC, arrPhuTungTmp, arrProduct};
 };
 
 const mapDispatchToProps = (dispatch: any) => {

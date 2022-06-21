@@ -24,7 +24,8 @@ import SortFilter from './components/SortFilterHangHoa';
 import MyNavigator from 'utils/MyNavigator';
 import {CategoryStyle} from './styles/ProductHangHoa.Style';
 import {IChooseStoreState} from 'views/menuLeft/redux';
-import CountHangHoa from './components/CountHangHoa';
+import Utilities from 'utils/Utilities';
+import {COLOR} from 'bases/styles/Core';
 const arrrTextTest = [
   {name: ' LG01 Lọc gió điều hòa ', price: 120000, id: 24182},
   {name: 'LG02 Lọc gió động cơ ', price: 350000, id: 24181},
@@ -48,7 +49,7 @@ class ProductHangHoa extends Component<IProps> {
 
   onPressOpenDetail = (itemProduct: ProductModel) => {
     MyNavigator.push('ProductDetail', {
-      idCha: itemProduct.id
+      itemProduct: itemProduct
     });
   };
 
@@ -56,7 +57,6 @@ class ProductHangHoa extends Component<IProps> {
     return (
       <MyView transparent>
         <SortFilter isShowSearchCode={false} isShowSort={true} />
-        <CountHangHoa />
       </MyView>
     );
   };
@@ -159,7 +159,7 @@ class ProductHangHoa extends Component<IProps> {
   };
 
   render() {
-    const {arrProduct, isRefresh} = this.props;
+    const {arrProduct, isRefresh, arrPhuTungTmp} = this.props;
     arrProduct?.forEach((item, index) => {
       const element = arrrTextTest.findIndex(value => value.id === item.id);
       if (element > 1) {
@@ -167,11 +167,27 @@ class ProductHangHoa extends Component<IProps> {
         arrProduct[index].price = arrrTextTest[element].price;
       }
     });
-
+    const children = arrPhuTungTmp?.concat(arrProduct);
     return (
       <MyView style={CategoryStyle.container}>
         <ItemLineIndicatorCustom />
         {this.renderHeader()}
+        <MyView style={[CategoryStyle.myViewTop2, {flexDirection: 'row', alignItems: 'center'}]}>
+          <MyText
+            style={[
+              CategoryStyle.textSum,
+              {
+                color: COLOR.TEXT.BLUE
+              }
+            ]}
+            myFontStyle="700"
+            numberOfLines={1}>
+            {Utilities.convertCount(children.length)}
+          </MyText>
+          <MyText style={{}} myFontStyle="Medium" numberOfLines={1}>
+            {' hàng hóa'}
+          </MyText>
+        </MyView>
         <ItemLineIndicatorCustom />
         <FlatList
           showsHorizontalScrollIndicator={false}
@@ -179,9 +195,9 @@ class ProductHangHoa extends Component<IProps> {
           refreshControl={
             <RefreshControl refreshing={isRefresh || false} onRefresh={this.reload} />
           }
-          data={arrProduct}
+          data={children}
           contentContainerStyle={CategoryStyle.contentContainerStyle}
-          extraData={arrProduct}
+          extraData={children}
           initialNumToRender={10}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
@@ -200,6 +216,7 @@ class ProductHangHoa extends Component<IProps> {
 const mapStateToProps = (state: RootState) => {
   const {isFirstLoading, isRefresh, arrProduct, isLoadMore, isStop, isError, giaHienThi} =
     state.ProductHangHoaReducer;
+  const {arrPhuTungTmp} = state.PhieuSuaChuaReducer;
   const {cuaHangDangChon} = state.ChooseStoreReducer;
   return {
     isFirstLoading,
@@ -209,7 +226,8 @@ const mapStateToProps = (state: RootState) => {
     isStop,
     isError,
     giaHienThi,
-    cuaHangDangChon
+    cuaHangDangChon,
+    arrPhuTungTmp
   };
 };
 

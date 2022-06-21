@@ -1,4 +1,4 @@
-import {put, takeLatest, select} from 'redux-saga/effects';
+import {put, takeLatest, select, call} from 'redux-saga/effects';
 import Utilities from 'utils/Utilities';
 import {DASHBOARD_ACTION} from './Dashboard.Reducer';
 import {RootState} from 'views/app/redux/App.Reducer';
@@ -7,7 +7,8 @@ import {
   IBCBHRequest,
   IBCDHRequest,
   IBCSPRequest,
-  IEndOfDayReportReq
+  IEndOfDayReportReq,
+  Top10Request
 } from 'services/DashBoard.Api';
 import {IAppAction} from 'views/app';
 import {IDashboardState, IStoreAndColor} from '.';
@@ -795,20 +796,30 @@ function* getTop10ForQty() {
     strStore = arrStoreRequest.join(',');
 
     /*  ##### BEGIN --- lấy danh sách 10 sản phẩm có số lượng bán cao nhất ##### */
-    let arrProductReportByQuantity: IBCSPModel[] = [];
-    let bcspQuantityRequest: IBCSPRequest = {
+    let arrProductReportByQuantity: any[] = [];
+    // let bcspQuantityRequest: IBCSPRequest = {
+    //   limit: 10,
+    //   skip: 0,
+    //   min_created_at_day: khoangThoiGian?.dateFrom,
+    //   max_created_at_day: khoangThoiGian?.dateTo,
+    //   view: 1,
+    //   sort_by: 'total_quantity_1',
+    //   order_by: 'desc',
+    //   stores: strStore
+    // };
+
+    let top10ForSaleReqNew: Top10Request = {
       limit: 10,
       skip: 0,
+      seller_type: 1,
       min_created_at_day: khoangThoiGian?.dateFrom,
       max_created_at_day: khoangThoiGian?.dateTo,
-      view: 1,
-      sort_by: 'total_quantity_1',
-      order_by: 'desc',
       stores: strStore
     };
 
-    let resultBCSPQuantity: IResponse<IBCSPModel[], ISumBCSPModel> =
-      yield DashBoardApi.getBaoCaoSanPham(bcspQuantityRequest);
+    let resultBCSPQuantity: IResponse<IBCDHModel[], ISumBCSPModel> = yield call(() =>
+      DashBoardApi.getTop10ProductForSaleNew(top10ForSaleReqNew)
+    );
     if (resultBCSPQuantity && !resultBCSPQuantity.code) {
       arrProductReportByQuantity = resultBCSPQuantity.data;
     }

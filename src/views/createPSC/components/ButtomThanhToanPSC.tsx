@@ -11,12 +11,12 @@ import Utilities from 'utils/Utilities';
 import {IPaymentOrderModel} from 'models/Payment.Model';
 import {PAYMENT_METHOD} from 'configs/FilterConfig';
 import MyNavigator from 'utils/MyNavigator';
-import {dataPhuTungFake} from 'views/phieuSuaChua/addPhieuSuaChua/components/DataPhuTungFake';
 
 export default function ButtomThanhToanPSC() {
   const arrPhieuSuaChua = useSelector(
     (state: RootState) => state.PhieuSuaChuaReducer.arrPhieuSuaChua
   );
+  const arrPhuTungTmp = useSelector((state: RootState) => state.PhieuSuaChuaReducer.arrPhuTungTmp);
   const arrProductPSC = useSelector((state: RootState) => state.CreatePSCReducer.arrProductPSC);
   const arrFormPayment = useSelector((state: RootState) => state.FormPaymentReducer.arrFormPayment);
   const cuaHangDangChon = useSelector(
@@ -122,21 +122,20 @@ export default function ButtomThanhToanPSC() {
       phieuSuaChuaTPM.total_paid = thanhToanInOrder[0].value;
     }
     Utilities.log(phieuSuaChuaTPM);
-    for (let i = 0; i < dataPhuTungFake.length; i++) {
-      const element = dataPhuTungFake[i];
+    for (let i = 0; i < arrPhuTungTmp.length; i++) {
+      const element = arrPhuTungTmp[i];
       const itemPhuTung = arrProductPSC.find(x => x.phuTung?.id === element.id);
       if (itemPhuTung && itemPhuTung.phuTung) {
         element.total_quantity = element.total_quantity - itemPhuTung.totalQty;
       }
     }
-    Utilities.log(dataPhuTungFake);
     batch(() => {
       dispatch(
         createAction('THANH/TOAN/ACTION_PSC', {
           phieuSuaChua: phieuSuaChuaTPM
         })
       );
-      dispatch(createAction('SET/PSC/ARR_PHU_TUNG', {arrPhuTungTmp: dataPhuTungFake}));
+      dispatch(createAction('SET/PSC/ARR_PHU_TUNG', {arrPhuTungTmp: arrPhuTungTmp}));
       dispatch(createAction('CREATE/PSC/RESET'));
       dispatch(createAction('SET/PSC/CURRENT_TIEP_NHAN_XE', {currenTiepNhanXe: undefined}));
     });

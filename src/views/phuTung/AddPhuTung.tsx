@@ -21,6 +21,7 @@ export default function AddPhuTung(props: IProps) {
     total_quantity: params.itemPhuTung?.total_quantity || 0,
     thumbnail_url: params.itemPhuTung?.thumbnail_url || ''
   });
+  Utilities.log(inputRef.current.price);
   const nameRef: any = useRef(null);
   const skuRef: any = useRef(null);
   const priceRef: any = useRef(null);
@@ -122,7 +123,7 @@ export default function AddPhuTung(props: IProps) {
           style={tw.style('h-40px')}
           placeholder={'VNĐ'}
           keyboardType={'number-pad'}
-          defaultValue={Utilities.convertCount(params.itemPhuTung?.price).toString()}
+          defaultValue={inputRef.current.price.toString()}
           onTextCallback={text => {
             inputRef.current.price = Number(text);
           }}
@@ -136,7 +137,6 @@ export default function AddPhuTung(props: IProps) {
         onChangeText={text => {
           inputRef.current.thumbnail_url = text;
         }}
-        defaultValue={params.itemPhuTung?.sku}
       />
       {/* <AddImages /> */}
       <MyButtonText

@@ -101,7 +101,7 @@ export class ItemProduct extends PureComponent<IProps, IState> {
               {sku}
             </MyText>
             <MyText myFontStyle="Regular" style={itemProductStyles.textStockRight}>
-              {Utilities.convertCount(tonKho)}
+              {Utilities.convertCount(tonKho || this.props.itemProduct.total_quantity)}
             </MyText>
           </MyView>
         </MyView>

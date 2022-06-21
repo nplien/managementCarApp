@@ -39,7 +39,7 @@ class ReportQtyProduct extends Component<IProps> {
             </MyText>
           </MyView>
 
-          <MyText style={styles.textPrice}>{Utilities.convertCount(item.total_quantity_1)}</MyText>
+          <MyText style={styles.textPrice}>{Utilities.convertCount(item.total_value_1)}</MyText>
         </MyView>
         <ItemLineIndicatorCustom containerStyle={styles.separator} />
       </MyView>

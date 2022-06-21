@@ -7,8 +7,6 @@ import {COLOR, setRadius} from 'bases/styles/Core';
 import TabThongTin from './components/tabThongTin/TabThongTin';
 import TabTonKho from './components/tabTonKho/TabTonKho';
 import {ProductModel, ProductOptionsModel} from 'models/Product.Model';
-import {ProductAPI} from 'services/Product.Api';
-import Utilities from 'utils/Utilities';
 import {IAppNavigateProps} from 'views/app';
 
 type IProps = IAppNavigateProps<'ProductDetail'>;
@@ -75,40 +73,44 @@ class ProductDetail extends PureComponent<IProps, IStates> {
   };
 
   componentDidMount() {
-    ProductAPI.getDetailProduct(this.props.route.params.idCha)
-      .then(response => {
-        if (response.code) {
-          Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
-          this.setState({
-            isFirstLoading: false,
-            isError: true
-          });
-        } else {
-          if (response.data) {
-            const productCon = response.data.products?.find(
-              x => x.id === this.props.route.params.idCon
-            );
-            this.setState({
-              isFirstLoading: false,
-              productCha: response.data,
-              productCon
-            });
-          } else {
-            Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
-            this.setState({
-              isFirstLoading: false,
-              isError: true
-            });
-          }
-        }
-      })
-      .catch(() => {
-        Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
-        this.setState({
-          isFirstLoading: false,
-          isError: true
-        });
-      });
+    // ProductAPI.getDetailProduct(this.props.route.params.idCha)
+    //   .then(response => {
+    //     if (response.code) {
+    //       Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
+    //       this.setState({
+    //         isFirstLoading: false,
+    //         isError: true
+    //       });
+    //     } else {
+    //       if (response.data) {
+    //         const productCon = response.data.products?.find(
+    //           x => x.id === this.props.route.params.idCon
+    //         );
+    //         this.setState({
+    //           isFirstLoading: false,
+    //           productCha: response.data,
+    //           productCon
+    //         });
+    //       } else {
+    //         Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
+    //         this.setState({
+    //           isFirstLoading: false,
+    //           isError: true
+    //         });
+    //       }
+    //     }
+    //   })
+    //   .catch(() => {
+    //     Utilities.showToast('Tải nội dung thất bại!', '', 'danger');
+    //     this.setState({
+    //       isFirstLoading: false,
+    //       isError: true
+    //     });
+    //   });
+    this.setState({
+      productCha: this.props.route.params.itemProduct,
+      isFirstLoading: false
+    });
   }
 
   render() {

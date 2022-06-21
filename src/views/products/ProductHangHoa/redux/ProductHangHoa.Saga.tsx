@@ -11,7 +11,7 @@ import {arrrProductNameTest} from 'views/banhang/ProductBanHang/redux/ProductNam
 
 function* getListProductHangHoa() {
   try {
-    const limit = 20;
+    const limit = 18;
 
     const rootState: RootState = yield select();
 

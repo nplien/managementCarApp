@@ -21,6 +21,8 @@ const URL_REPORT_SALE = 'v1/sale-reports';
 const URL_REPORT_PRODUCT = 'v1/product-reports';
 const URL_REPORT_ORDER = 'v1/orders';
 const END_OF_DAY_REPORT = 'v1/end-of-day-reports/products';
+const TOP_10_SP = URL_REPORT_SALE + '/product-top-seller';
+const URL_DT_BY_TIME = URL_REPORT_SALE + '/store-revenue';
 
 export interface IBCBHRequest {
   stores?: string;
@@ -91,7 +93,21 @@ export interface IEndOfDayReportReq {
   min_created_at_day?: string;
   max_created_at_day?: string;
 }
-
+export interface Top10Request {
+  skip?: number;
+  limit?: number;
+  stores?: string;
+  seller_type?: 1 | 2; // 1: sl ban, 2: doanh thu
+  date_time?: string;
+  min_created_at_day?: string;
+  max_created_at_day?: string;
+}
+export interface DoanhThuTimeRequest {
+  stores?: string;
+  date_time?: string;
+  min_created_at_day?: string;
+  max_created_at_day?: string;
+}
 const DashBoardApi = {
   /**
    * * Lay doanh thu theo cua hang
@@ -207,8 +223,23 @@ const DashBoardApi = {
       Utilities.getHeaderRequest()
     );
     return response;
+  },
+  getTop10ProductForSaleNew: async (params: Top10Request) => {
+    const response = await ClientAPI.GET<IResponse<IBCDHModel[], any>>(
+      TOP_10_SP,
+      params,
+      Utilities.getHeaderRequest()
+    );
+    return response;
+  },
+  getDoanhThuThoiGian: async (params: DoanhThuTimeRequest) => {
+    const response = await ClientAPI.GET<IResponse<IBCDHModel[], any>>(
+      URL_DT_BY_TIME,
+      params,
+      Utilities.getHeaderRequest()
+    );
+    return response;
   }
-
   // end-of-day-reports/products?
 };
 export {DashBoardApi};

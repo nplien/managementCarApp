@@ -5,13 +5,11 @@ import {setPadding, MY_SIZE, COLOR} from 'bases/styles/Core';
 import MyNavigator from 'utils/MyNavigator';
 import {IAppNavigateProps} from 'views/app';
 import tw from 'utils/tailwind';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {RootState} from 'views/app/redux';
 import Utilities from 'utils/Utilities';
 import {IProductPCS} from 'models/PhieuSuaChua.Model';
 import {ItemLineIndicatorCustom} from 'views/app/components/items';
-import {createAction} from 'views/app/redux/MyAction';
-import {dataPhuTungFake} from './addPhieuSuaChua/components/DataPhuTungFake';
 // import {createAction} from 'views/app/redux/MyAction';
 
 type IProps = IAppNavigateProps<'PhieuSuaChua'>;
@@ -20,9 +18,7 @@ export default function PhieuSuaChua(props: IProps) {
   const arrPhieuSuaChua = useSelector(
     (state: RootState) => state.PhieuSuaChuaReducer.arrPhieuSuaChua
   );
-  const arrPhuTungTmp = useSelector((state: RootState) => state.PhieuSuaChuaReducer.arrPhuTungTmp);
 
-  const dispatch = useDispatch();
   useEffect(() => {
     props.navigation.setOptions({
       headerTitle: 'Phiếu sửa chữa',
@@ -40,9 +36,9 @@ export default function PhieuSuaChua(props: IProps) {
         );
       }
     });
-    if (arrPhuTungTmp?.length < 1) {
-      dispatch(createAction('SET/PSC/ARR_PHU_TUNG', {arrPhuTungTmp: dataPhuTungFake}));
-    }
+    // if (arrPhuTungTmp?.length < 1) {
+    //   dispatch(createAction('SET/PSC/ARR_PHU_TUNG', {arrPhuTungTmp: dataPhuTungFake}));
+    // }
     const timer1 = setTimeout(() => {
       setIsFirstLoading(false);
     }, 500);

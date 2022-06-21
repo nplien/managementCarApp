@@ -45,7 +45,7 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
 
     return (
       <MyView style={styles.container}>
-        <MyButton
+        {/* <MyButton
           style={styles.viewFlex}
           onPress={() => {
             this.props.clearListDashBoardInvoice();
@@ -71,7 +71,7 @@ class ViewTongDoanhThu extends React.Component<IProps, any> {
             size={24}
             color={COLOR.SWITCH.PLACEHOLDER}
           />
-        </MyButton>
+        </MyButton> */}
         <MyButton
           style={styles.viewFlex}
           onPress={() => {

@@ -3,7 +3,7 @@ import {IProvince, IStorePerson} from './ModelBase';
 export interface CustomerModel {
   id?: number;
   type?: string;
-  name: string;
+  name?: string;
   note?: string;
   phone?: string;
   email?: string;
@@ -45,11 +45,11 @@ export interface CustomerModel {
     name?: string;
   };
   stores?: IStorePerson[];
-  is_verified_phone: boolean;
-  is_verified_email: boolean;
-  is_verified_password: boolean;
-  role: string;
-  permissions: any
+  is_verified_phone?: boolean;
+  is_verified_email?: boolean;
+  is_verified_password?: boolean;
+  role?: string;
+  permissions?: any;
 }
 export interface CustomerModelRequest {
   status?: string;

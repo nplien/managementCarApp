@@ -4,18 +4,19 @@ import {MyText, MyView} from 'bases/components';
 import {COLOR} from 'bases/styles/Core';
 import {itemStoreStyles} from 'views/products/ProductDetail/styles/ProductDetail.style';
 import {StoreModel} from 'models/ManagerSetting.Model';
-import {StockProduct} from 'models/Product.Model';
+import {ProductModel, StockProduct} from 'models/Product.Model';
 import Utilities from 'utils/Utilities';
 
 interface IProps {
   item: StoreModel;
   listStock: StockProduct[];
+  productCha?: ProductModel;
 }
 
 export default class ItemTonKho extends PureComponent<IProps> {
   render() {
-    const {item, listStock} = this.props;
-
+    const {item, listStock, productCha} = this.props;
+    Utilities.log(productCha);
     let tonKho = 0;
     const listTonKho = listStock.filter(element => {
       return element.id?.toString() === item.id.toString();
@@ -50,7 +51,9 @@ export default class ItemTonKho extends PureComponent<IProps> {
         </MyView>
         <MyView style={itemStoreStyles.viewRight}>
           <MyText myFontStyle="Regular">Tồn kho</MyText>
-          <MyText style={itemStoreStyles.textContent}>{Utilities.convertCount(tonKho)}</MyText>
+          <MyText style={itemStoreStyles.textContent}>
+            {Utilities.convertCount(tonKho || this.props.productCha?.total_quantity)}
+          </MyText>
         </MyView>
       </MyView>
     );

@@ -43,7 +43,12 @@ function* thanhToan() {
     postOrderRequest.channel = rootState.CreateSaleReducer.currentKenhBan || ARR_KENH_BAN[2];
 
     //  thong tin cua khach hang
-    postOrderRequest.customer = rootState.ProductBanHangReducer.currentKhachHang || KHACH_LE;
+    postOrderRequest.customer =
+      {
+        id: rootState.ProductBanHangReducer.currentKhachHang?.id,
+        name: rootState.ProductBanHangReducer.currentKhachHang?.name,
+        phone: rootState.ProductBanHangReducer.currentKhachHang?.phone
+      } || KHACH_LE;
 
     //  thong tin cua san pham
     postOrderRequest.price_book = rootState.ProductBanHangReducer.currentBangGia || BANG_GIA_CHUNG;

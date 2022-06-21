@@ -5,6 +5,7 @@ import {IStorePerson} from 'models/ModelBase';
 import {PaymentModel} from 'models/Order.Model';
 import {IProductPCS} from 'models/PhieuSuaChua.Model';
 import {IPhuTungModel} from 'models/PhuTung.Model';
+import {ProductModel} from 'models/Product.Model';
 import {IStaffModel} from 'models/Staff.Model';
 import {IStoreModel} from 'models/Store.Model';
 import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
@@ -37,7 +38,7 @@ export type RouterParamsList = {
   AddSuppliers: undefined | {type: 'UPDATE'; InfoSupplierUpdate: CustomerModel};
   CreateGroupSupplier: undefined;
   Categorys: {arrCate?: ICategoryModel[]; screen: string};
-  ProductDetail: {idCha: number; idCon?: number};
+  ProductDetail: {itemProduct: ProductModel; idCon?: number; idCha?: number};
   BangGiaChung: undefined;
   CreateSale: undefined;
   KenhBan: undefined;

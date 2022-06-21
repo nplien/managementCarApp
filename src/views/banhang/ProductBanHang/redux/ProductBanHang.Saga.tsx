@@ -37,7 +37,7 @@ function* getListProductBanHang() {
 
     let param: any = {
       skip: 3,
-      limit: 20,
+      limit: 18,
       sort_by: sortBy,
       order_by: orderBy
     };

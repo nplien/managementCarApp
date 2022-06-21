@@ -2,6 +2,7 @@ import {IProductPCS} from 'models/PhieuSuaChua.Model';
 import {IPhuTungModel, IProductPhuTung} from 'models/PhuTung.Model';
 import {ITiepNhanXeModel} from 'models/TiepNhanXe.Model';
 import {MyReduxAction, PayloadList} from 'views/app/redux/MyAction.Type';
+import {dataPhuTungFake} from '../addPhieuSuaChua/components/DataPhuTungFake';
 
 type IStatusPSCStates = {
   productPhuTung?: IProductPhuTung;
@@ -17,7 +18,7 @@ type IStatusPSCStates = {
 const initialStates: IStatusPSCStates = {
   arrPhuTung: [],
   arrPhieuSuaChua: [],
-  arrPhuTungTmp: []
+  arrPhuTungTmp: dataPhuTungFake
 };
 const PhieuSuaChuaReducer = (state: IStatusPSCStates = initialStates, action: MyReduxAction) => {
   switch (action.type) {

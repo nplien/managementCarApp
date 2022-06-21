@@ -51,18 +51,20 @@ export default function PhuTung(props: IProps) {
   const renderItemSeparatorComponent = () => (
     <MyView style={tw.style('m-2px h-1px bg-stone-200')} />
   );
-  //   const handleToDatail = (item: IPhuTungModel) => {
-  //     console.log(item);
-  //     // if (params?.type === 'PHIEU_SUA_XE') {
-  //     //   dispatch(createAction('SET/PSC/CURRENT_TIEP_NHAN_XE', {currenTiepNhanXe: item}));
-  //     //   MyNavigator.goBack();
-  //     // } else {
-  //     //   MyNavigator.navigate('AddTiepNhanXe', {type: 'update', itemTNX: item});
-  //     // }
-  //   };
+  const handleToDatail = (item: IPhuTungModel) => {
+    console.log(item);
+    // if (params?.type === 'PHIEU_SUA_XE') {
+    //   dispatch(createAction('SET/PSC/CURRENT_TIEP_NHAN_XE', {currenTiepNhanXe: item}));
+    //   MyNavigator.goBack();
+    // } else {
+    MyNavigator.navigate('AddPhuTung', {type: 'update', itemPhuTung: item});
+    // }
+  };
 
   const renderItem = ({item}: {item: IPhuTungModel}) => (
-    <MyButton style={tw.style('flex-row p-8px items-center', 'bg-white')}>
+    <MyButton
+      onPress={() => handleToDatail(item)}
+      style={tw.style('flex-row p-8px items-center', 'bg-white')}>
       <MyImage style={tw.style('w-40px h-40px')} source={{uri: item.thumbnail_url}} />
       <MyView transparent style={tw.style('flex-1 ml-10px')}>
         <MyView transparent style={tw.style('flex-row justify-between')}>
@@ -88,7 +90,7 @@ export default function PhuTung(props: IProps) {
   const renderEmpty = () => {
     return (
       <MyView style={tw.style('justify-center items-center')}>
-        <MyText style={tw.style('font-bold')}>Chưa có phiếu tiếp nhận nào</MyText>
+        <MyText style={tw.style('font-bold')}>Chưa có Phụ tùng nào</MyText>
       </MyView>
     );
   };
@@ -105,7 +107,7 @@ export default function PhuTung(props: IProps) {
         <MyText
           myFontStyle={'Medium'}
           style={tw.style('justify-center py-8px pl-16px font-medium')}>
-          {'Tổng số ' + Utilities.convertCount(arrPhuTungTmp?.length) + ' phiếu tiếp nhận'}
+          {'Tổng số ' + Utilities.convertCount(arrPhuTungTmp?.length) + ' phụ tùng'}
         </MyText>
       </MyView>
       <ItemLineIndicatorCustom />

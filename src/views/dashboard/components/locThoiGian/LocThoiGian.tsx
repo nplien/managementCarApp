@@ -11,7 +11,9 @@ import {
   changeKhoangThoiGianDashBoard,
   getDoanhThuTheoStorePieChartDashBoard,
   getDoanhThuTheoThoiGianStackBarDashBoard,
-  IDashboardState
+  IDashboardState,
+  getTop10ForSale,
+  getTop10ForQty
 } from '../../redux';
 import {locThoiGianStyles} from '../../styles/DashBoard.styles';
 import {IDateFilterType, IDateRange, IPropsButtonSheet} from 'views/app';
@@ -23,7 +25,8 @@ interface IProps extends IDashboardState {
   changeKhoangThoiGianDashBoard: typeof changeKhoangThoiGianDashBoard;
   getDoanhThuTheoStorePieChartDashBoard: typeof getDoanhThuTheoStorePieChartDashBoard;
   getDoanhThuTheoThoiGianStackBarDashBoard: typeof getDoanhThuTheoThoiGianStackBarDashBoard;
-
+  getTop10ForSale: typeof getTop10ForSale;
+  getTop10ForQty: typeof getTop10ForQty;
   getBCSP: typeof getBCSP;
   getBCDH: typeof getBCDH;
 }
@@ -52,6 +55,8 @@ class LocThoiGian extends PureComponent<IProps> {
       this.props.getDoanhThuTheoThoiGianStackBarDashBoard();
       this.props.getBCSP();
       this.props.getBCDH();
+      this.props.getTop10ForSale();
+      this.props.getTop10ForQty();
     }
   };
 
@@ -62,6 +67,8 @@ class LocThoiGian extends PureComponent<IProps> {
     this.props.getDoanhThuTheoThoiGianStackBarDashBoard();
     this.props.getBCSP();
     this.props.getBCDH();
+    this.props.getTop10ForSale();
+    this.props.getTop10ForQty();
   };
 
   render() {
@@ -116,7 +123,9 @@ const mapDispatchToProps = (dispatch: any) => {
       getDoanhThuTheoStorePieChartDashBoard,
       getDoanhThuTheoThoiGianStackBarDashBoard,
       getBCSP,
-      getBCDH
+      getBCDH,
+      getTop10ForQty,
+      getTop10ForSale
     },
     dispatch
   );

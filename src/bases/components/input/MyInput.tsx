@@ -73,7 +73,7 @@ interface IPropsInputMask extends Partial<TextInputMaskProps> {
   label?: any | null;
   inputRef?: React.Ref<any>;
   containerStyle?: StyleProp<ViewStyle>;
-
+  defaultValue?: string;
   currency?: 'VND' | 'USD';
   myFontStyle?: TYPE_OF_FONT;
   value?: string;
